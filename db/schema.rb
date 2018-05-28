@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_191935) do
+ActiveRecord::Schema.define(version: 2018_05_28_210426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "charities", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.string "province"
+    t.string "business_number"
+    t.text "description"
+    t.string "logo"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.bigint "charity_id"
+    t.bigint "user_id"
+    t.integer "donation_amount"
+    t.string "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["charity_id"], name: "index_donations_on_charity_id"
+    t.index ["user_id"], name: "index_donations_on_user_id"
+  end
+
+  create_table "mappings", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "charity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_mappings_on_category_id"
+    t.index ["charity_id"], name: "index_mappings_on_charity_id"
+  end
+
+  create_table "user_charities", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "charity_id"
+    t.boolean "bookmarked", default: false
+    t.boolean "disliked", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["charity_id"], name: "index_user_charities_on_charity_id"
+    t.index ["user_id"], name: "index_user_charities_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +81,10 @@ ActiveRecord::Schema.define(version: 2018_05_28_191935) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "donations", "charities"
+  add_foreign_key "donations", "users"
+  add_foreign_key "mappings", "categories"
+  add_foreign_key "mappings", "charities"
+  add_foreign_key "user_charities", "charities"
+  add_foreign_key "user_charities", "users"
 end
