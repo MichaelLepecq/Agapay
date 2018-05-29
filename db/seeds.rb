@@ -10,7 +10,7 @@ require 'open-uri'
 puts "Destroying old data..."
 Charity.destroy_all
 
-doc = open('https://www.canadahelps.org/fr/search/charities/?offset=20').read
+doc = open('https://www.canadahelps.org/fr/search/charities/?category=environment&offset=20').read
 file = JSON.parse(doc)
 
 puts "Creating seeds from canadahelps.org..."
