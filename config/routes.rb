@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :charities, only: [:index, :show] do
-    resources :donations, only: [:create ]
+    resources :donations, only: [:create ] do
+      resources :payments, only: [:new, :create]
+    end
     resources :bookmarks, only: [:create]
   end
   resources :bookmarks, only: [:update, :destroy]
