@@ -1,3 +1,14 @@
-<h1><%= @charity.name.downcase.capitalize %></h1>
+<ul class="list-inline">
+  <li><%= image_tag "#{@charity.logo}", size: "100x100" %></li>
+  <li><%= @charity.name.downcase.capitalize %></li>
+</ul>
+
+<div>
+  <p><%= @charity.city %></p>
+  <p><%= @charity.province %></p>
+  <%= sanitize @charity.description %>
+  <p> <%= @charity.business_number %></p>
+</div>
 <a href="javascript:history.back()" class="back-button">Back to index</a>
+
 
