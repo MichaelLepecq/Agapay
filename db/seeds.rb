@@ -9,14 +9,14 @@ require 'open-uri'
 
 puts "Destroying old data..."
 Charity.destroy_all
-Preference.destroy_all
+Category.destroy_all
 
 # Seed users
 
 joy = User.create!(
   first_name: "Joy",
   last_name: "Navi",
-  remote_photo_url: "",
+  # remote_photo_url: "",
   email: "joy@joy.com",
   password: "123456",
 )
@@ -24,7 +24,7 @@ joy = User.create!(
 mg = User.create!(
   first_name: "mg",
   last_name: "ayoub",
-  remote_photo_url: "",
+  # remote_photo_url: "",
   email: "mg@mg.com",
   password: "123456"
 )
@@ -32,7 +32,7 @@ mg = User.create!(
 michael = User.create!(
   first_name: "michael",
   last_name: "lepecq",
-  remote_photo_url: "",
+  # remote_photo_url: "",
   email: "mike@mike.com",
   password: "123456",
 )
@@ -40,14 +40,14 @@ michael = User.create!(
 gaelle = User.create!(
   first_name: "gaelle",
   last_name: "londoz",
-  remote_photo_url: "",
+  # remote_photo_url: "",
   email: "gaelle@gaelle.com",
   password: "123456",
 )
 
 categories = ["animal", "international", "art", "indigenous", "environment", "social", "health", "education"]
 categories.each do |cat|
-  Preference.create!(name: cat)
+  Category.create!(name: cat)
 end
 
 doc = open('https://www.canadahelps.org/fr/search/charities/?category=environment&offset=20').read
