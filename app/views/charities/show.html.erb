@@ -7,6 +7,9 @@
   </div>
   <div class="body">
     <div class="show-description">
+      <% @charity.categories.each do |cat|   %>
+      <%= cat.name %>
+      <% end %>
       <% charityc = @charity.name.split(" ") do |elem| elem.upcase end %>
       <div class="show_title">
        <p><strong><%= charityc.join(" ") %></strong></p>
@@ -16,13 +19,13 @@
     </div>
     <a href="/charities" class="back-button">Back to index</a>
   </div>
-</div>
-
-<div class="mapshow"
+  <div class="mapshow"
   id="map"
-  style="width: 100%;
-  height: 400px;"
+  style="width: 95%;
+  height: 400px;
+  background-color: white;"
   data-markers="<%= @markers.to_json %>"
-></div>
+  ></div>
+</div>
 
 
