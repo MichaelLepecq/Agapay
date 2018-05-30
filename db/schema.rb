@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2018_05_30_150506) do
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "charity_categories", force: :cascade do |t|
