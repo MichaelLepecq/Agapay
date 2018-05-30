@@ -16,7 +16,7 @@ Category.destroy_all
 joy = User.create!(
   first_name: "Joy",
   last_name: "Navi",
-  remote_photo_url: "",
+  # remote_photo_url: "",
   email: "joy@joy.com",
   password: "123456",
 )
@@ -24,7 +24,7 @@ joy = User.create!(
 mg = User.create!(
   first_name: "mg",
   last_name: "ayoub",
-  remote_photo_url: "",
+  # remote_photo_url: "",
   email: "mg@mg.com",
   password: "123456"
 )
@@ -32,7 +32,7 @@ mg = User.create!(
 michael = User.create!(
   first_name: "michael",
   last_name: "lepecq",
-  remote_photo_url: "",
+  # remote_photo_url: "",
   email: "mike@mike.com",
   password: "123456",
 )
@@ -40,7 +40,7 @@ michael = User.create!(
 gaelle = User.create!(
   first_name: "gaelle",
   last_name: "londoz",
-  remote_photo_url: "",
+  # remote_photo_url: "",
   email: "gaelle@gaelle.com",
   password: "123456",
 )
