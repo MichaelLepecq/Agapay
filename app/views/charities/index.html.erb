@@ -1,9 +1,16 @@
-<% @charities.each do |charity| %>
-<ul class="list-inline">
-  <li><%= image_tag "#{charity.logo}", size: "100x100" %></li>
-  <li><%= link_to charity_path(charity) do %>
-      <p><%= charity.name.downcase.capitalize %></p>
-  <% end %></li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-3 ">
+      <% @charities.each do |charity| %>
+          <ul class="list-inline">
+            <li><%= image_tag "#{charity.logo}", size: "100x100" %></li>
+            <li><%= link_to charity_path(charity) do %>
+                <p><%= charity.name.downcase.capitalize %></p>
+            <% end %>
+            </li>
+          </ul>
+      <% end %>
+    </div>
+  </div>
 </div>
-<% end %>
+
