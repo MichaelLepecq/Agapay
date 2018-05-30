@@ -1,11 +1,12 @@
 class CharitiesController < ApplicationController
   skip_before_action :authenticate_user!
   def index
-   # binding.pry
+
    @categories = Category.all
 
     if params[:query].present?
       @charities = Charity.global_search("%#{params[:query]}%")
+      binding.pry
       if @charities.count == 0
         @charities = Charity.all
       end

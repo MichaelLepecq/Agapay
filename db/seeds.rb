@@ -45,10 +45,14 @@ gaelle = User.create!(
   password: "123456",
 )
 
-categories = ["animal", "international", "art", "indigenous", "environment", "social", "health", "education"]
+puts "creating categories"
+categories = ["animals", "international", "arts-culture", "indigenous-peoples", "environment", "social-services", "health", "education", "public-benefit", "religion"]
 categories.each do |cat|
   Category.create!(name: cat)
+  puts "created category #{cat}"
 end
+
+puts "-------------"
 
 doc = open('https://www.canadahelps.org/fr/search/charities/?category=environment&offset=20').read
 file = JSON.parse(doc)
@@ -56,7 +60,7 @@ file = JSON.parse(doc)
 puts "Creating seeds from canadahelps.org..."
 i = 0
 19.times do
-  Charity.create!({
+  charity = Charity.create!({
     name: file['results'][i]['popular_name_en'],
     city: file['results'][i]['city'],
     province: file['results'][i]['province'],
@@ -64,6 +68,15 @@ i = 0
     description: file['results'][i]['charity_profile']['about_en'],
     logo: "https://www.canadahelps.org#{file['results'][i]['charity_profile']['logo']}"
   })
+
+  puts "created charity #{charity.name}"
+  file['results'][i]['categories'].each do |cat|
+    CharityCategory.create!(charity: charity, category: Category.find_by(name: cat))
+    puts "added category #{cat} to #{charity.name}"
+  end
+
+  puts "---------------"
+
   i += 1
 end
 puts "Finished"
