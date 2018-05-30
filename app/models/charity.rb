@@ -1,5 +1,6 @@
 class Charity < ApplicationRecord
   include PgSearch
+  has_many :mappings
   has_many :categories, through: :mappings
 
   validates :city, presence: :true
@@ -10,7 +11,7 @@ class Charity < ApplicationRecord
   pg_search_scope :global_search,
   against: [ :name, :city, :province ],
   associated_against: {
-    category: [ :name ]
+    categories: [ :name ]
   },
   using: {
     tsearch: { prefix: true }
