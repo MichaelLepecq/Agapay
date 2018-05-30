@@ -1,6 +1,6 @@
 class Charity < ApplicationRecord
   include PgSearch
-  has_many :mappings
+  has_many :charity_categories
   has_many :categories, through: :charity_categories
 
   validates :city, presence: :true
