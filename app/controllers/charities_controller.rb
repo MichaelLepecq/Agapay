@@ -15,6 +15,10 @@ class CharitiesController < ApplicationController
 
   def show
     @charity = Charity.find(params[:id])
+    @markers = [{
+      lat: @charity.latitude,
+      lng: @charity.longitude,
+    }]
   end
 end
 
