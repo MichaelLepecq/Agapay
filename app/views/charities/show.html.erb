@@ -1,20 +1,25 @@
-<ul class="list-inline">
-  <li><%= image_tag "#{@charity.logo}", size: "100x100" %></li>
-  <li><%= @charity.name.downcase.capitalize %></li>
-</ul>
-
-<div>
-  <p><%= @charity.city %></p>
-  <p><%= @charity.province %></p>
-  <%= sanitize @charity.description %>
-  <p> <%= @charity.business_number %></p>
+<div class="wrapp">
+  <div class="show-container">
+    <div class="img_show">
+      <%= image_tag "#{@charity.logo}" %>
+      <hr>
+    </div>
+  </div>
+  <div class="body">
+    <div class="show-description">
+      <% charityc = @charity.name.split(" ") do |elem| elem.upcase end %>
+      <p><strong><%= charityc.join(" ") %></strong></p>
+      <%= sanitize @charity.description %>
+      <p> <%= @charity.business_number %></p>
+    </div>
+    <a href="/charities" class="back-button">Back to index</a>
+  </div>
 </div>
-<a href="/charities" class="back-button">Back to index</a>
 
 <div
   id="map"
   style="width: 100%;
-  height: 600px;"
+  height: 400px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
 
