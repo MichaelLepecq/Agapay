@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_29_212721) do
+ActiveRecord::Schema.define(version: 2018_05_30_150506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,10 +53,13 @@ ActiveRecord::Schema.define(version: 2018_05_29_212721) do
     t.index ["charity_id"], name: "index_mappings_on_charity_id"
   end
 
-  create_table "preferences", force: :cascade do |t|
-    t.string "name"
+  create_table "user_categories", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_user_categories_on_category_id"
+    t.index ["user_id"], name: "index_user_categories_on_user_id"
   end
 
   create_table "user_charities", force: :cascade do |t|
@@ -68,15 +71,6 @@ ActiveRecord::Schema.define(version: 2018_05_29_212721) do
     t.datetime "updated_at", null: false
     t.index ["charity_id"], name: "index_user_charities_on_charity_id"
     t.index ["user_id"], name: "index_user_charities_on_user_id"
-  end
-
-  create_table "user_preferences", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "preference_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["preference_id"], name: "index_user_preferences_on_preference_id"
-    t.index ["user_id"], name: "index_user_preferences_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -103,8 +97,8 @@ ActiveRecord::Schema.define(version: 2018_05_29_212721) do
   add_foreign_key "donations", "users"
   add_foreign_key "mappings", "categories"
   add_foreign_key "mappings", "charities"
+  add_foreign_key "user_categories", "categories"
+  add_foreign_key "user_categories", "users"
   add_foreign_key "user_charities", "charities"
   add_foreign_key "user_charities", "users"
-  add_foreign_key "user_preferences", "preferences"
-  add_foreign_key "user_preferences", "users"
 end

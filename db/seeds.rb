@@ -9,7 +9,7 @@ require 'open-uri'
 
 puts "Destroying old data..."
 Charity.destroy_all
-Preference.destroy_all
+Category.destroy_all
 
 # Seed users
 
@@ -47,7 +47,7 @@ gaelle = User.create!(
 
 categories = ["animal", "international", "art", "indigenous", "environment", "social", "health", "education"]
 categories.each do |cat|
-  Preference.create!(name: cat)
+  Category.create!(name: cat)
 end
 
 doc = open('https://www.canadahelps.org/fr/search/charities/?category=environment&offset=20').read

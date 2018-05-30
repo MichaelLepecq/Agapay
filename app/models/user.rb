@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  # mount_uploader :photo, PhotoUploader
-
-  has_many :preferences, through: :user_preference
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  has_many :categories, through: :user_category
   has_many :charities, through: :user_charity
 
   devise :database_authenticatable, :registerable,
