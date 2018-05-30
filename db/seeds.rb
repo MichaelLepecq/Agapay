@@ -11,6 +11,40 @@ puts "Destroying old data..."
 Charity.destroy_all
 Preference.destroy_all
 
+# Seed users
+
+joy = User.create!(
+  first_name: "Joy",
+  last_name: "Navi",
+  remote_photo_url: "",
+  email: "joy@joy.com",
+  password: "123456",
+)
+
+mg = User.create!(
+  first_name: "mg",
+  last_name: "ayoub",
+  remote_photo_url: "",
+  email: "mg@mg.com",
+  password: "123456"
+)
+
+michael = User.create!(
+  first_name: "michael",
+  last_name: "lepecq",
+  remote_photo_url: "",
+  email: "mike@mike.com",
+  password: "123456",
+)
+
+gaelle = User.create!(
+  first_name: "gaelle",
+  last_name: "londoz",
+  remote_photo_url: "",
+  email: "gaelle@gaelle.com",
+  password: "123456",
+)
+
 categories = ["animal", "international", "art", "indigenous", "environment", "social", "health", "education"]
 categories.each do |cat|
   Preference.create!(name: cat)
