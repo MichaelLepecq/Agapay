@@ -8,7 +8,9 @@
   <div class="body">
     <div class="show-description">
       <% charityc = @charity.name.split(" ") do |elem| elem.upcase end %>
-      <p><strong><%= charityc.join(" ") %></strong></p>
+      <div class="show_title">
+       <p><strong><%= charityc.join(" ") %></strong></p>
+      </div>
       <%= sanitize @charity.description %>
       <p> <%= @charity.business_number %></p>
     </div>
@@ -16,7 +18,7 @@
   </div>
 </div>
 
-<div
+<div class="mapshow"
   id="map"
   style="width: 100%;
   height: 400px;"
