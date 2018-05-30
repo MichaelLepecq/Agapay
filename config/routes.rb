@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     end
     resources :bookmarks, only: [:create]
   end
+  get '/search', to: 'charities#search', as: 'search'
   resources :bookmarks, only: [:update, :destroy]
   resources :donations, only: [ :destroy ]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
