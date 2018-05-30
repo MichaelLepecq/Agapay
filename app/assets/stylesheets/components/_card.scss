@@ -1,0 +1,32 @@
+h1, h2, h3 {
+  font-family: karla, sans-serif;
+  font-weight: 600;
+  color: $dark-gray;
+}
+h2 {
+  font-size: 1.3em;
+}
+.card {
+  height: 100vh;
+  background-color: white;
+  margin: 30px 0 30px 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.card-photo {
+    text-align: center;
+    border-bottom: 1px solid $light-gray;
+    padding: 30px;
+}
+.card-title {
+  padding: 0 30px 0 30px;
+  // text-transform: uppercase;
+}
+.card-title a {
+  text-decoration: none;
+  color: $dark-gray;
+  &:hover {
+    color: $light-gray;
+  }
+
+}
