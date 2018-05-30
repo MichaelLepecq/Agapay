@@ -1,0 +1,7 @@
+<%= form_tag charities_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search"
+  %>
+<% end %>
