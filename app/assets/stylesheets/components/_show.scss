@@ -3,33 +3,56 @@
 }
 .show-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
+
 .img_show {
   flex: 1 1 auto;
-  justify-content: center;
   text-align: center;
   margin: 10px;
-  margin-bottom: -50px;
-  width: 180px;
-  vertical-align: middle;
-  border-radius: 3px;
-  height: 170px;
+  margin-bottom: -10px;
+  border-radius: 2px;
+  border-bottom: solid;
+  border-bottom-width: thin;
+  border-bottom-color: #E0E0E0;
 }
 
 .show-description {
   background-color: white;
-  margin: 2px;
+  max-width: 900px;
+  margin: auto;
+
+  .show-style {
+    span {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    span:last-child {
+      font-weight: lighter;
+    }
+
+    h3 {
+      text-transform: lowercase;
+    }
+    h3::first-line {
+      text-transform: capitalize;
+    }
+
+  }
 
   .show_title {
     p {
-      font-size: 20px;
+      font-size: 26px;
     }
   }
   p {
     padding: 10px;
     font-size: 18px;
-    margin: 0 0 11px;
+    margin: 0 0 10px;
     text-align: left;
+    margin-top: -15px;
   }
 }
 .show-container {
