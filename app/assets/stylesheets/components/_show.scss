@@ -3,26 +3,39 @@
 }
 .show-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
+
 .img_show {
   flex: 1 1 auto;
-  justify-content: center;
   text-align: center;
   margin: 10px;
   margin-bottom: -50px;
-  width: 180px;
-  vertical-align: middle;
   border-radius: 3px;
-  height: 170px;
 }
 
 .show-description {
   background-color: white;
   margin: 2px;
 
+  .show-style {
+    span {
+      font-size: 20px;
+    }
+
+    h3 {
+      text-transform: lowercase;
+    }
+    h3::first-line {
+      text-transform: capitalize;
+    }
+  }
+
   .show_title {
     p {
-      font-size: 20px;
+      font-size: 26px;
     }
   }
   p {
