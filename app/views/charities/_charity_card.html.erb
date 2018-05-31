@@ -6,7 +6,15 @@
       </div>
       <div class="card-category">
         <% charity.categories.each do |cat|   %>
-          <div class="<%= cat.name %> tags"><%= cat.name.capitalize %></div>
+          <% if cat.name == "arts-culture"  %>
+            <div class="<%= cat.name %> tags">Arts & Culture</div>
+          <% elsif cat.name == "indigenous-peoples"  %>
+            <div class="<%= cat.name %> tags">Indigenous Peoples</div>
+          <% elsif cat.name == "social-services"  %>
+            <div class="<%= cat.name %> tags">Social Services</div>
+          <% else %>
+            <div class="<%= cat.name %> tags"><%= cat.name.capitalize %></div>
+          <% end %>
         <% end %>
       </div>
       <div class="card-content">
