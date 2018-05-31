@@ -6,14 +6,15 @@
     </div>
   </div>
   <div class="body">
-  <div>
-    <ul class="list-inline">
-    <% @charity.categories.each do |cat|   %>
-    <li class="<%= cat.name %> categories"><%= cat.name.capitalize %></li>
-    <% end %>
-    </ul>
-  </div>
+
     <div class="show-description">
+      <div>
+        <ul class="list-inline">
+          <% @charity.categories.each do |cat|   %>
+          <li class="<%= cat.name %> categories"><%= cat.name.capitalize %></li>
+          <% end %>
+        </ul>
+      </div>
 
       <% charityc = @charity.name.split(" ") do |elem| elem.upcase end %>
       <div class="show_title">
@@ -22,7 +23,7 @@
       <div class="show-style">
         <%= sanitize @charity.description %>
       <div>
-      <p> <%= @charity.business_number %></p>
+      <p>Business Number: <%= @charity.business_number %></p>
     </div>
     <a href="/charities" class="back-button">Back to index</a>
   </div>

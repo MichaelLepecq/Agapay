@@ -12,17 +12,25 @@
   flex: 1 1 auto;
   text-align: center;
   margin: 10px;
-  margin-bottom: -50px;
-  border-radius: 3px;
+  margin-bottom: -10px;
+  border-radius: 2px;
+  border-bottom: solid;
+  border-bottom-width: thin;
+  border-bottom-color: #E0E0E0;
 }
 
 .show-description {
   background-color: white;
-  margin: 2px;
+  max-width: 900px;
+  margin: auto;
 
   .show-style {
     span {
       font-size: 20px;
+      font-weight: bold;
+    }
+    span:last-child {
+      font-weight: lighter;
     }
 
     h3 {
@@ -31,6 +39,7 @@
     h3::first-line {
       text-transform: capitalize;
     }
+
   }
 
   .show_title {
@@ -41,8 +50,9 @@
   p {
     padding: 10px;
     font-size: 18px;
-    margin: 0 0 11px;
+    margin: 0 0 10px;
     text-align: left;
+    margin-top: -15px;
   }
 }
 .show-container {
