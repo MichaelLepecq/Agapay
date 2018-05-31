@@ -1,4 +1,11 @@
+<div id="charities">
 <% @charities.each do |charity| %>
+ <%= render "charities/charity_card", charity: charity %>
+<% end %>
+</div>
+
+
+
 <ul class="list-inline">
   <li><%= image_tag "#{charity.logo}", size: "100x100" %></li>
   <li><%= link_to charity_path(charity) do %>
@@ -7,3 +14,4 @@
 </ul>
 </div>
 <% end %>
+
