@@ -1,0 +1,48 @@
+.link-purple{
+  text-decoration: none;
+  color: $purple;
+  opacity: 0.8;
+  &:hover{
+    text-decoration: none;
+    color: $purple;
+    opacity: 1;
+  }
+}
+
+#user_remember_me{
+  margin-right: 10px;
+}
+
+input[type=email] {
+  border: none;
+  border-bottom: 1px solid $light-gray;
+  box-shadow: none;
+  padding-left: 2px;
+}
+
+input[type=text] {
+  border: none;
+  border-bottom: 1px solid $light-gray;
+  box-shadow: none;
+  padding-left: 2px;
+}
+
+input[type=password] {
+  border: none;
+  border-bottom: 1px solid $light-gray;
+  box-shadow: none;
+  padding-left: 2px;
+}
+
+.form-control:focus {
+  border-color: none;
+  outline: 0;
+  box-shadow: none;
+  border-color: gray;
+}
+
+.remember {
+  font-weight: 400;
+  font-size: 16px;
+  color: #7f848e;
+}

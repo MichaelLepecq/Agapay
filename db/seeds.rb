@@ -8,8 +8,10 @@ require 'json'
 require 'open-uri'
 
 puts "Destroying old data..."
+CharityCategory.destroy_all
 Charity.destroy_all
 Category.destroy_all
+User.destroy_all
 
 # Seed users
 
@@ -70,9 +72,9 @@ i = 0
   })
 
   puts "created charity #{charity.name}"
-  file['results'][i]['categories'].each do |cat|
-    CharityCategory.create!(charity: charity, category: Category.find_by(name: cat))
-    puts "added category #{cat} to #{charity.name}"
+  file['results'][i]['categories'].each do |cate|
+    CharityCategory.create!(charity: charity, category: Category.find_by(name: cate))
+    puts "added category #{cate} to #{charity.name}"
   end
 
   puts "---------------"
