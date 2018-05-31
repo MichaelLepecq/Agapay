@@ -1,12 +1,12 @@
 class CharitiesController < ApplicationController
-  skip_before_action :authenticate_user!
+  #before_action :authenticate_user!, only: [:favorite]
+
   def index
 
    @categories = Category.all
 
     if params[:query].present?
       @charities = Charity.global_search("%#{params[:query]}%")
-      binding.pry
       if @charities.count == 0
         @charities = Charity.all
       end
@@ -23,6 +23,25 @@ class CharitiesController < ApplicationController
       lng: @charity.longitude,
     }]
   end
+
+  def favorite
+    # verifier si ya un favorite pour cete charite
+    # si oui alors je la detruit
+    # si non alors je la cree
+    @charity = Charity.find(charity_params[:charity_id])
+
+    # if favorite[:charity_id].present?
+      @favorite = UserCharity.create(user: current_user, charity: @charity)
+    # else
+    #   @favorite.destroy
+    # end
+  end
+
+  private
+  def charity_params
+    params.permit(:charity_id)
+  end
+
 end
 
 

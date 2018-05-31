@@ -12,6 +12,28 @@ h2 {
   margin: 30px 0 30px 0;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  position: relative;
+  .card-favorite {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 30px;
+    a {
+      &:hover {
+        .fill {
+          fill: $blue;
+        }
+      }
+    }
+    svg {
+      width: 25px;
+    }
+  }
+  .liked {
+    .fill {
+      fill: $blue;
+    }
+  }
 }
 .card-photo {
     text-align: center;
@@ -20,7 +42,6 @@ h2 {
 }
 .card-title {
   padding: 0 30px 0 30px;
-  // text-transform: uppercase;
 }
 .card-title a {
   text-decoration: none;
@@ -28,5 +49,4 @@ h2 {
   &:hover {
     color: $light-gray;
   }
-
 }

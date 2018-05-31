@@ -9,8 +9,10 @@
             <div class="card-category">
               category
             </div>
-            <div class="card-favorite">
-              <%= if bookmarked  %>
+            <div id="fav-<%= charity.id %>" class="card-favorite <%= charity.liked(current_user) ? 'liked' : ''  %>">
+              <%= link_to charity_favorite_path(charity), method: :post, remote: :true do  %>
+                  <%= inline_svg('empty_heart')%>
+              <% end %>
             </div>
             <div class="card-title">
               <h2>
