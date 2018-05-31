@@ -34,7 +34,6 @@
     }
   }
 }
-
 .card-favorite {
   position: absolute;
   right: 30px;
@@ -65,15 +64,15 @@
   }
 }
 .card-photo {
-  border-bottom: 1px solid #light-gray;
-  padding-bottom: 15px;
+  border-bottom: 1px solid $light-gray;
+  padding-bottom: 15px 0;
   height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .card-content {
-  padding: 0px 0px 0 20px;
+  padding: 0px 20px;
   color: $dark-gray;
   p {
     font-size: 0.9em;
@@ -85,10 +84,6 @@
     text-decoration: none;
   }
 }
-// .card-title a {
-//   text-decoration: none;
-//   color: $dark-gray;
-//   &:hover {
-//     color: $light-gray;
-//   }
-// }
+.card-category {
+
+}

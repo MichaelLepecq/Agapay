@@ -1,34 +1,9 @@
 <div class="container">
   <div class="row">
-    <% @charities.each do |charity| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 card-wrapper">
-        <%= link_to charity_path(charity) do %>
-          <div class="card" >
-            <div class="card-photo">
-              <%= image_tag "#{charity.logo}" %>
-            </div>
-            <div class="card-category">
-              category
-            </div>
-            <div class="card-content">
-              <h2>
-                <%= charity.name.upcase %>
-              </h2>
-              <p> <%= sanitize(truncate(charity.description, tags: %w(p), length: 150)) %></p>
-            </div>
-            <div class="card-hover">
-              <span>more info</span>
-            </div>
-          </div>
-        <% end %>
-        <div class="card-favorite">
-          <div id="fav-<%= charity.id %>" class="<%= charity.liked(current_user) ? 'liked' : '' %>">
-            <%= link_to charity_favorite_path(charity), method: :post, remote: :true do  %>
-                <%= inline_svg('empty_heart')%>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <div id="charities">
+      <% @charities.each do |charity| %>
+        <%= render "charities/charity_card", charity: charity %>
+      <% end %>
+    </div>
   </div>
 </div>

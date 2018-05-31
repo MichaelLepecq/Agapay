@@ -1,21 +1,38 @@
-<ul class="list-inline">
-  <li><%= image_tag "#{@charity.logo}", size: "100x100" %></li>
-  <li><%= @charity.name.downcase.capitalize %></li>
-</ul>
+<div class="wrapp">
+  <div class="show-container">
+    <div class="img_show">
+      <%= image_tag "#{@charity.logo}", width: "250" %>
+      <hr>
+    </div>
+  </div>
+  <div class="body">
+  <div>
+    <ul class="list-inline">
+    <% @charity.categories.each do |cat|   %>
+    <li class="<%= cat.name %> categories"><%= cat.name.capitalize %></li>
+    <% end %>
+    </ul>
+  </div>
+    <div class="show-description">
 
-<div>
-  <p><%= @charity.city %></p>
-  <p><%= @charity.province %></p>
-  <%= sanitize @charity.description %>
-  <p> <%= @charity.business_number %></p>
-</div>
-<a href="/charities" class="back-button">Back to index</a>
-
-<div
+      <% charityc = @charity.name.split(" ") do |elem| elem.upcase end %>
+      <div class="show_title">
+       <p><strong><%= charityc.join(" ") %></strong></p>
+      </div>
+      <div class="show-style">
+        <%= sanitize @charity.description %>
+      <div>
+      <p> <%= @charity.business_number %></p>
+    </div>
+    <a href="/charities" class="back-button">Back to index</a>
+  </div>
+  <div class="mapshow"
   id="map"
-  style="width: 100%;
-  height: 600px;"
+  style="width: 95%;
+  height: 400px;
+  background-color: white;"
   data-markers="<%= @markers.to_json %>"
-></div>
+  ></div>
+</div>
 
 

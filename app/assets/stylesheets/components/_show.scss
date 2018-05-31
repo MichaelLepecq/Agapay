@@ -1,0 +1,63 @@
+.wrapp {
+  background-color: white;
+}
+.show-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.img_show {
+  flex: 1 1 auto;
+  text-align: center;
+  margin: 10px;
+  margin-bottom: -50px;
+  border-radius: 3px;
+}
+
+.show-description {
+  background-color: white;
+  margin: 2px;
+
+  .show-style {
+    span {
+      font-size: 20px;
+    }
+
+    h3 {
+      text-transform: lowercase;
+    }
+    h3::first-line {
+      text-transform: capitalize;
+    }
+  }
+
+  .show_title {
+    p {
+      font-size: 26px;
+    }
+  }
+  p {
+    padding: 10px;
+    font-size: 18px;
+    margin: 0 0 11px;
+    text-align: left;
+  }
+}
+.show-container {
+  background-color: white;
+}
+
+.mapshow {
+  margin: auto;
+  background-color: white;
+  width: 95%;
+  margin-bottom: auto;
+}
+
+#map {
+  width: 300px;
+  height: 225px;
+  position: relative;
+}

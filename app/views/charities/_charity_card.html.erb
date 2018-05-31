@@ -1,0 +1,35 @@
+<div class="col-xs-12 col-sm-6 col-md-4 card-wrapper">
+    <%= link_to charity_path(charity) do %>
+      <div class="card" >
+        <div class="card-photo">
+          <%= image_tag "#{charity.logo}" %>
+        </div>
+        <div class="card-category">
+          <ul class="list-inline">
+          <% charity.categories.each do |cat|   %>
+            <li class="<%= cat.name %> categories"><%= cat.name.capitalize %></li>
+          <% end %>
+          </ul>
+        </div>
+        <div class="card-content">
+          <h2>
+            <%= charity.name.upcase %>
+          </h2>
+          <p> <%= sanitize(truncate(charity.description, tags: %w(p), length: 150)) %></p>
+        </div>
+        <div class="card-hover">
+          <span>more info</span>
+        </div>
+      </div>
+    <% end %>
+    <div class="card-favorite">
+      <div id="fav-<%= charity.id %>" class="<%= charity.liked(current_user) ? 'liked' : '' %>">
+        <%= link_to charity_favorite_path(charity), method: :post, remote: :true do  %>
+            <%= inline_svg('empty_heart')%>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <%= image_tag ""%>
+    </div>
+  </div>
