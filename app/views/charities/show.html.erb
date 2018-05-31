@@ -1,20 +1,27 @@
 <div class="wrapp">
   <div class="show-container">
     <div class="img_show">
-      <%= image_tag "#{@charity.logo}" %>
+      <%= image_tag "#{@charity.logo}", width: "250" %>
       <hr>
     </div>
   </div>
   <div class="body">
+  <div>
+    <ul class="list-inline">
+    <% @charity.categories.each do |cat|   %>
+    <li class="<%= cat.name %> categories"><%= cat.name.capitalize %></li>
+    <% end %>
+    </ul>
+  </div>
     <div class="show-description">
-      <% @charity.categories.each do |cat|   %>
-      <%= cat.name %>
-      <% end %>
+
       <% charityc = @charity.name.split(" ") do |elem| elem.upcase end %>
       <div class="show_title">
        <p><strong><%= charityc.join(" ") %></strong></p>
       </div>
-      <%= sanitize @charity.description %>
+      <div class="show-style">
+        <%= sanitize @charity.description %>
+      <div>
       <p> <%= @charity.business_number %></p>
     </div>
     <a href="/charities" class="back-button">Back to index</a>
