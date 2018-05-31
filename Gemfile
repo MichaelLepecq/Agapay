@@ -19,7 +19,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'stripe'
 gem 'geocoder'
-
+gem 'select2-rails'
+gem 'underscore-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
