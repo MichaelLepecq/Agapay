@@ -6,6 +6,7 @@
   <div id="provinces-names" data-names="<%= @charities.pluck(:province).flatten.uniq.to_json %>"></div>
   <div id="categories-names" data-names="<%= @charities.map(&:categories).flatten.map(&:name).uniq.to_json%>"></div>
 
+
   <div class="search-filter-bar">
     <div class="button-submit">
       <button class="submit">
