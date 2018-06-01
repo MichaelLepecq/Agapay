@@ -10,7 +10,7 @@ class Category < ApplicationRecord
     "animals" => "Animals",
     "education" => "Education",
     "social-services" => "Social Services",
-    "indigenous-people" => "Indigenous Peoples"
+    "indigenous-peoples" => "Indigenous Peoples"
   }
 
   def pretty_name
