@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <% @categories.each do |category| %>
+        <%= link_to user_category_path(category), method: :patch, remote: :true do %>
+          <div class="col-xs-6">
+            <div class="preference-box <%= category.name %>">
+              <%= image_tag category.name, size: "50x50" %>
+              <p><%= category.pretty_name %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
