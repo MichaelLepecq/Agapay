@@ -2,6 +2,8 @@ class CharitiesController < ApplicationController
  before_action :authenticate_user!, only: [:favorite]
 
   def index
+     @donation = Donation.new()
+     @categories_user = current_user.categories
      @categories = Category.where('name != ? AND name != ?', 'public-benefit', 'religion')
      @charities = Charity.all
    end
