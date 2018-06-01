@@ -22,6 +22,10 @@
   color: black;
 }
 
+.environment, .international, .health, .arts-culture, .animals, .education, .social-services, .indigenous-peoples{
+    border: solid 3px #5FBB9200;
+}
+
 .environment.focs{
     border: solid 3px #5FBB92;
 }
