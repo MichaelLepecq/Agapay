@@ -1,11 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4 form-login">
-      <div class="text-center">
-      <%= simple_form_for [@charity, @donation] do |f| %>
-        <%= f.input :donation_amount, label: false, as: :slider, min: 0, max: 100 %>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-content">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4 form-login">
+      <h2>Your Donation:</h2>
+      <%= simple_form_for([@charity, @donation], { remote: true }) do |f| %>
+        <%= f.input(:donation_amount, { label: false, as: :slider, min: 0, max: 100 }) %>
+        <%= f.submit %>
       <% end %>
-      </div>
+      <hr>
+      <h4><center>Enter Amount</center></h4>
     </div>
   </div>
 </div>

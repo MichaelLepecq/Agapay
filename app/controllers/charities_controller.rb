@@ -4,6 +4,7 @@ class CharitiesController < ApplicationController
   def index
    @categories = Category.all
    @charities = Charity.all
+   @donation = Donation.new()
   end
 
   def search
