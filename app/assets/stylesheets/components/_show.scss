@@ -1,73 +1,72 @@
-.wrapp {
+.wrapper {
   background-color: white;
+  @media(min-width: 720px) {
+    display: flex;
+  }
 }
-.show-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
+.content-wrapper {
+  @media(min-width: 720px) {
+    width: 70%;
+  }
+  overflow-y: scroll;
 }
 
 .img_show {
-  flex: 1 1 auto;
+  border-bottom: 1px solid $light-gray;
+  padding: 20px 0;
   text-align: center;
-  margin: 10px;
-  margin-bottom: -10px;
-  border-radius: 2px;
-  border-bottom: solid;
-  border-bottom-width: thin;
-  border-bottom-color: #E0E0E0;
 }
-
-.show-description {
-  background-color: white;
-  max-width: 900px;
-  margin: auto;
-
-  .show-style {
-    span {
-      font-size: 20px;
-      font-weight: bold;
-    }
-    span:last-child {
-      font-weight: lighter;
-    }
-
-    h3 {
-      text-transform: lowercase;
-    }
-    h3::first-line {
-      text-transform: capitalize;
-    }
-
+.show-category {
+  padding: 0px 35px;
+  color: white;
+  font-weight: lighter;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+.show-content {
+  padding: 0 40px;
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
   }
-
-  .show_title {
-    p {
-      font-size: 26px;
-    }
+  h3 {
+    text-transform: lowercase;
+    font-size: 20px;
+  }
+  h3::first-line {
+    text-transform: capitalize;
   }
   p {
-    padding: 10px;
-    font-size: 18px;
-    margin: 0 0 10px;
-    text-align: left;
-    margin-top: -15px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  ul, ol > li {
+    font-size: 16px;
+    font-weight: 300;
   }
 }
-.show-container {
-  background-color: white;
+.show-back {
+  margin: 30px 15px;
 }
-
+.back-button {
+  background-color: $purple;
+  padding: 15px 30px;
+  color: white;
+  border-radius: 2px;
+  &:hover {
+  opacity: 0.5;
+  background: $purple;
+  text-decoration: none;
+  color: white;
+  }
+}
 .mapshow {
-  margin: auto;
-  background-color: white;
-  width: 95%;
-  margin-bottom: auto;
-}
-
-#map {
-  width: 300px;
-  height: 225px;
-  position: relative;
-}
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+ }
