@@ -1,6 +1,6 @@
 .navbar-form {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #the-basics{
@@ -8,17 +8,17 @@
 }
 
 .search-filter-bar {
-    border-bottom: 1px #565656 solid;
-    width: 236px;
-    display: flex;
-    margin-right: 6px;
+  border-bottom: 1px #565656 solid;
+  width: 236px;
+  display: flex;
+  margin-right: 6px;
 
 }
 
 
 button.submit {
-    border: none;
-    background: white;
+  border: none;
+  background: white;
 }
 #sidebar {
   height: 100vh;
@@ -202,4 +202,52 @@ input[type=text] {
 //   .isSelected {
 //     background-color: lightgreen;
 //   }
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+  #sidebar ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 2px;
+    margin-right: 37px;
+  }
+
+  #sidebar {
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 44444444;
+    right: -550px;
+    bottom: 0;
+    /* z-index: 4; */
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+  }
+  div#filters-close {
+    margin-left: 17px;
+    margin-top: 17px;
+  }
+
+  #sidebar ul li {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 6px 26px;
+  }
+}
+
 
