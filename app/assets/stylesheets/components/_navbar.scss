@@ -92,3 +92,17 @@ a.navbar-wagon-brand:hover
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+
+.navbar-form {
+    display: flex;
+    /* width: 800px; */
+    height: 70px;
+    background: white;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+.right{
+  width:0px;
+}
