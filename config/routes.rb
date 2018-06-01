@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :charities, only: [:index, :show] do
     post "favorite", to: "charities#favorite", as: :favorite
-    resources :donations, only: [:create, :destroy ] do
+    resources :donations, only: [:new, :create, :destroy ] do
       resources :payments, only: [:new, :create]
     end
   end
