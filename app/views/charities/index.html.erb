@@ -2,8 +2,10 @@
   <div class="row">
     <div id="charities">
       <% @charities.each do |charity| %>
-        <%= render "charities/charity_card", charity: charity %>
+        <%# render "charities/charity_card", charity: charity %>
       <% end %>
     </div>
   </div>
 </div>
+
+<%= render "shared/filters" %>

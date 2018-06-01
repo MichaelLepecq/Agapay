@@ -1,77 +1,29 @@
-<%= form_tag search_path, remote: :true, method: :get, id: "the-basics", class: "search" do |f| %>
-<div id="charity-names" data-names="<%= @charities.pluck(:name).flatten.uniq.to_json %>"></div>
-<div id="cities-names" data-names="<%= @charities.pluck(:city).flatten.uniq.to_json %>"></div>
-<div id="provinces-names" data-names="<%= @charities.pluck(:province).flatten.uniq.to_json %>"></div>
-<div id="categories-names" data-names="<%= @charities.map(&:categories).flatten.map(&:name).uniq.to_json%>"></div>
 
-<div class="search_wrapper">
-  <div class="bloc">
-    <%= text_field_tag :query,
-    params[:query],
-    class: "typeahead search_field ",
-      placeholder: "Search"
-      %>
-      <div class="form-group filter">
-        <div class="dropdown">
-          <button class="search-icon dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <%=  image_submit_tag("filter.svg", height: 20) %>
-          </button>
+<div class="search-wrapper">
+  <%= form_tag search_path, remote: :true, method: :get, id: "the-basics", class: "search" do |f| %>
+  <div id="charity-names" data-names="<%= @charities.pluck(:name).flatten.uniq.to_json %>"></div>
+  <div id="cities-names" data-names="<%= @charities.pluck(:city).flatten.uniq.to_json %>"></div>
+  <div id="provinces-names" data-names="<%= @charities.pluck(:province).flatten.uniq.to_json %>"></div>
+  <div id="categories-names" data-names="<%= @charities.map(&:categories).flatten.map(&:name).uniq.to_json%>"></div>
 
-          <ul class="dropdown-menu search" aria-labelledby="dropdownMenu1">
-            <section>
-              <% Category.all.each do |category| %>
-
-              <% if category.name != "public-benefit" && category.name != "religion" %>
-              <li>
-                <input type="checkbox" name="categories[<%= category.id %>]" id="charity_category_names_<%= category.name %>">
-                <p><%= image_tag "#{category.name}.svg", class: 'icon_cat', height: '25', width: '25' %><p>
-                <p><label for="charity_category_names_<%= category.name %>">
-                  <%= category.name %></p>
-                </li>
-                <% end %>
-
-                <% end %>
-              </div>
-            </ul>
-
-        </div>
-      </div>
+  <div class="search-filter-bar">
+    <div class="button-submit">
+      <button class="submit">
+        <%=  image_submit_tag("search_icon.svg", height: 20, class: 'search_button fa fa-search search_icon', alt: 'Find') %>
+      </button>
     </div>
-    <button class="submit">
-      <%=  image_submit_tag("search_icon.svg", height: 20, class: 'search_button fa fa-search search_icon', alt: 'Find') %>
-    </button>
+    <%= text_field_tag :query, params[:query], class: "typeahead search_field ",placeholder: "Search" %>
+    <div class="form-group filter">
+      <% @categories.each do |category| %>
+      <input type="checkbox" name="categories[<%= category.id %>]" id="charity_category_names_<%= category.name %>" class="hidden" >
+      <% end %>
+    </div>
   </div>
-<% end %>
+  <% end %>
+</div>
+
+<div id="filters-button" onclick="toggleSidebar(event, this)">
+  <%=  image_tag "filter.svg", height: 20 %>
+</div>
 
 
-
-    <script>
-      $("input").on("click", function(){
-
-        $(this).parent().toggleClass("isSelected");
-      });
-
-
-var options = [];
-
-$( '.dropdown-menu li' ).on( 'click', function( event ) {
-
-   var $target = $( event.currentTarget ),
-       val = $target.attr( 'data-value' ),
-       $inp = $target.find( 'input' ),
-       idx;
-
-   if ( ( idx = options.indexOf( val ) ) > -1 ) {
-      options.splice( idx, 1 );
-      setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
-   } else {
-      options.push( val );
-      setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
-   }
-
-   $( event.target ).blur();
-
-   console.log( options );
-   return false;
-});
-    </script>
