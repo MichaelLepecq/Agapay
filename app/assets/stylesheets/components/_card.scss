@@ -67,7 +67,7 @@
 }
 .card-photo {
   border-bottom: 1px solid $light-gray;
-  padding-bottom: 15px 0;
+  padding: 15px 0;
   height: 150px;
   display: flex;
   align-items: center;
@@ -76,6 +76,9 @@
 .card-content {
   padding: 0px 20px;
   color: $dark-gray;
+  h2 {
+    font-size: 20px;
+  }
   p {
     font-size: 0.9em;
     color: $dark-gray;

@@ -1,42 +1,36 @@
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
-<div class="wrapp">
-  <div class="show-container">
-    <div class="img_show">
-      <%= image_tag "#{@charity.logo}", width: "250" %>
-      <hr>
+<div class="img_show">
+  <%= image_tag "#{@charity.logo}", width: "250" %>
+</div>
+<div class="wrapper">
+  <div class="content-wrapper">
+    <div class="show-category">
+      <% @charity.categories.each do |cat|   %>
+        <% if cat.name == "arts-culture"  %>
+          <div class="tag-<%= cat.name %> tags">Arts & Culture</div>
+        <% elsif cat.name == "indigenous-peoples"  %>
+          <div class="tag-<%= cat.name %> tags">Indigenous Peoples</div>
+        <% elsif cat.name == "social-services"  %>
+          <div class="tag-<%= cat.name %> tags">Social Services</div>
+        <% else %>
+          <div class="tag-<%= cat.name %> tags"><%= cat.name.capitalize %></div>
+        <% end %>
+      <% end %>
     </div>
-  </div>
-  <div class="body">
-
-    <div class="show-description">
-      <div>
-        <ul class="list-inline">
-          <% @charity.categories.each do |cat|   %>
-          <li class="tag-<%= cat.name %> categories"><%= cat.name.capitalize %></li>
-          <% end %>
-        </ul>
-      </div>
-
+    <div class="show-content">
       <% charityc = @charity.name.split(" ") do |elem| elem.upcase end %>
-      <div class="show_title">
-       <p><strong><%= charityc.join(" ") %></strong></p>
-      </div>
-      <div class="show-style">
-        <%= sanitize @charity.description %>
-      <div>
-      <p>Business Number: <%= @charity.business_number %></p>
+      <h2><%= charityc.join(" ") %></h2>
+      <%= sanitize @charity.description %>
     </div>
     <%= link_to("Donate", "#", { style: 'width: 100%;', class: "btn btn-success", "data-toggle" => "modal", "data-target" => "#charity-modal-#{@charity.id}" } ) %>
-    <a href="/charities" class="back-button">Back to index</a>
   </div>
-  <div class="mapshow"
-  id="map"
-  style="width: 95%;
-  height: 400px;
-  background-color: white;"
-  data-markers="<%= @markers.to_json %>"
-  ></div>
+  <div class="mapshow" id="map" data-markers="<%= @markers.to_json %>">
+  </div>
+</div>
+
+<div class="show-back">
+  <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
 </div>
 
 <div class="modal fade bd-example-modal-lg" id="charity-modal-<%= @charity.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -73,4 +67,6 @@
   </div>
 </div>
 
+
+<%= stylesheet_link_tag 'show', media: 'all' %>
 
