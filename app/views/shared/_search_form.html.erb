@@ -1,5 +1,5 @@
 
-<%= simple_form_for(charities_path, remote: true, method: :get) do |f| %>
+<%= form_tag search_path, remote: :true, method: :get do |f| %>
 <div class="form-inline">
   <div class="form-group">
     <%= text_field_tag :query,
@@ -17,10 +17,12 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <% Category.all.each do |category| %>
-          <li>
-            <input type="checkbox" value="true" name="<%= category.name %>" id="charity_category_names_<%= category.name %>">
-            <label for="charity_category_names_<%= category.name %>"><%= category.name %></label>
-          </li>
+            <% if category.name != "public-benefit" && category.name != "religion" %>
+              <li>
+                <input type="checkbox" value="true" name="<%= category.name %>" id="charity_category_names_<%= category.name %>">
+                <label for="charity_category_names_<%= category.name %>"><%= category.name %></label>
+              </li>
+            <% end %>
           <% end %>
         </ul>
       </div>

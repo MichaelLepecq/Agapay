@@ -1,9 +1,9 @@
-<% @charities.each do |charity| %>
-<ul class="list-inline">
-  <li><%= image_tag "#{charity.logo}", size: "100x100" %></li>
-  <li><%= link_to charity_path(charity) do %>
-      <p><%= charity.name.downcase.capitalize %></p>
-  <% end %></li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div id="charities">
+      <% @charities.each do |charity| %>
+        <%= render "charities/charity_card", charity: charity %>
+      <% end %>
+    </div>
+  </div>
 </div>
-<% end %>

@@ -1,8 +1,10 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :categories, through: :user_category
-  has_many :charities, through: :user_charity
+  has_many :user_categories
+  has_many :user_charities
+  has_many :categories, through: :user_categories
+  has_many :charities, through: :user_charities
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -10,7 +12,4 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  # def photo_file_name
-  #   self.email
-  # end
 end
