@@ -1,4 +1,3 @@
-<% unless ["home"].include?(params[:action]) %>
 <%= form_tag search_path, remote: :true, method: :get, id: "the-basics", class: "search" do |f| %>
 <div id="charity-names" data-names="<%= @charities.pluck(:name).flatten.uniq.to_json %>"></div>
 <div id="cities-names" data-names="<%= @charities.pluck(:city).flatten.uniq.to_json %>"></div>
@@ -18,32 +17,32 @@
             <%=  image_submit_tag("filter.svg", height: 20) %>
           </button>
 
-            <ul class="dropdown-menu search" aria-labelledby="dropdownMenu1">
-              <section>
-                <% Category.all.each do |category| %>
+          <ul class="dropdown-menu search" aria-labelledby="dropdownMenu1">
+            <section>
+              <% Category.all.each do |category| %>
 
-                <% if category.name != "public-benefit" && category.name != "religion" %>
-                <li>
-                  <input type="checkbox" name="categories[<%= category.id %>]" id="charity_category_names_<%= category.name %>">
-                  <p><%= image_tag "#{category.name}.svg", class: 'icon_cat', height: '25', width: '25' %><p>
-                  <p><label for="charity_category_names_<%= category.name %>">
-                    <%= category.name %></p>
-                  </li>
-                  <% end %>
+              <% if category.name != "public-benefit" && category.name != "religion" %>
+              <li>
+                <input type="checkbox" name="categories[<%= category.id %>]" id="charity_category_names_<%= category.name %>">
+                <p><%= image_tag "#{category.name}.svg", class: 'icon_cat', height: '25', width: '25' %><p>
+                <p><label for="charity_category_names_<%= category.name %>">
+                  <%= category.name %></p>
+                </li>
+                <% end %>
 
-                  <% end %>
-                </div>
-              </ul>
+                <% end %>
+              </div>
+            </ul>
 
-          </div>
         </div>
       </div>
-      <button class="submit">
-        <%=  image_submit_tag("search_icon.svg", height: 20, class: 'search_button fa fa-search search_icon', alt: 'Find') %>
-      </button>
     </div>
-    <% end %>
-    <% end %>
+    <button class="submit">
+      <%=  image_submit_tag("search_icon.svg", height: 20, class: 'search_button fa fa-search search_icon', alt: 'Find') %>
+    </button>
+  </div>
+<% end %>
+
 
 
     <script>
