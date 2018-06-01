@@ -1,13 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:none;stroke:#565656;stroke-miterlimit:10;}
-</style>
-<title>zoom 2</title>
-<g>
-	<line class="st0" x1="44" y1="44" x2="32.7" y2="32.7"/>
-	<circle class="st0" cx="20" cy="20" r="18"/>
-</g>
+<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.51648 3.27293e-08C1.06014 0.552325 0.551788 1.06014 3.27293e-08 1.51648L5.16879 6.68581L6.68527 5.16879L1.51648 3.27293e-08Z" transform="translate(18.3147 18.276)" fill="#565656"/>
+<path d="M10.1885 20.377C4.57035 20.377 0 15.8067 0 10.1885C0 4.57035 4.57035 0 10.1885 0C15.8067 0 20.377 4.57035 20.377 10.1885C20.377 15.8067 15.8067 20.377 10.1885 20.377ZM10.1885 1.07248C5.16182 1.07248 1.07248 5.16182 1.07248 10.1885C1.07248 15.2152 5.16182 19.3046 10.1885 19.3046C15.2152 19.3046 19.3046 15.2152 19.3046 10.1885C19.3046 5.16182 15.2152 1.07248 10.1885 1.07248Z" transform="translate(0.961536 0.923218)" fill="#565656"/>
 </svg>
