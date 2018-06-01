@@ -31,9 +31,10 @@
     <div class="dropdown">
         <%= image_tag 'bars.svg', class: 'menuburger', data: { toggle: 'dropdown' }, height: '25', width: '25' %>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %><% end %></li>
+        <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
+    <% end %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
