@@ -19,9 +19,14 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'stripe'
 gem 'geocoder'
+
+gem 'select2-rails'
+gem 'underscore-rails'
+
 gem 'simple_form_extension'
 gem 'jquery'
 gem 'coffee-script'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

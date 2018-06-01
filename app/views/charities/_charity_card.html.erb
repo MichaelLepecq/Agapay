@@ -7,13 +7,13 @@
       <div class="card-category">
         <% charity.categories.each do |cat|   %>
           <% if cat.name == "arts-culture"  %>
-            <div class="<%= cat.name %> tags">Arts & Culture</div>
+            <div class="tag-<%= cat.name %> tags">Arts & Culture</div>
           <% elsif cat.name == "indigenous-peoples"  %>
-            <div class="<%= cat.name %> tags">Indigenous Peoples</div>
+            <div class="tag-<%= cat.name %> tags">Indigenous Peoples</div>
           <% elsif cat.name == "social-services"  %>
-            <div class="<%= cat.name %> tags">Social Services</div>
+            <div class="tag-<%= cat.name %> tags">Social Services</div>
           <% else %>
-            <div class="<%= cat.name %> tags"><%= cat.name.capitalize %></div>
+            <div class="tag-<%= cat.name %> tags"><%= cat.name.capitalize %></div>
           <% end %>
         <% end %>
       </div>

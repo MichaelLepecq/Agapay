@@ -1,27 +1,31 @@
 class CharitiesController < ApplicationController
-  #before_action :authenticate_user!, only: [:favorite]
+ before_action :authenticate_user!, only: [:favorite]
 
   def index
-   @categories = Category.all
-   @charities = Charity.all
-   @donation = Donation.new()
-  end
+     @donation = Donation.new()
+     @categories_user = current_user.categories
+     @categories = Category.where('name != ? AND name != ?', 'public-benefit', 'religion')
+     @charities = Charity.all
+   end
 
-  def search
+   def search
     if params[:query].present?
-      charities_1 = Charity.global_search("%#{params[:query]}%")
-      arr = []
-      Category.all.each do |cat|
-        arr << cat.name if params[cat.name]
-      end
-      charities_2 = Charity.select{ |charity| (charity.categories.pluck(:name)&arr).any? }
-      @charities = charities_1&charities_2
-      # binding.pry
-      if @charities.count == 0
-        @charities = Charity.all
-      end
+      @charities = Charity.global_search("%#{params[:query]}%")
     else
       @charities = Charity.all
+    end
+
+
+    if params[:categories].present?
+      category_ids = params[:categories].keys
+      charity_ids = @charities.pluck(:id)
+
+      @charities = Charity.joins(:charity_categories).where(
+        charity_categories: {
+          category_id: category_ids
+        },
+        id: charity_ids
+      ).uniq
     end
   end
 
@@ -32,6 +36,7 @@ class CharitiesController < ApplicationController
       lng: @charity.longitude,
     }]
   end
+
 
 
   def favorite
@@ -45,6 +50,7 @@ class CharitiesController < ApplicationController
       @favorite.first.destroy
     end
   end
+
 
   private
 

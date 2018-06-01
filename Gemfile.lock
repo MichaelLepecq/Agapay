@@ -184,6 +184,8 @@ GEM
       bundler
       ffi (~> 1.9.6)
       sass (>= 3.3.0)
+    select2-rails (4.0.3)
+      thor (~> 0.14)
     selectize-rails (0.12.4.1)
     simple_form (4.0.1)
       actionpack (>= 5.0)
@@ -214,6 +216,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.10)
       execjs (>= 0.3.0, < 3)
+    underscore-rails (1.8.3)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.6.2)
@@ -253,12 +256,14 @@ DEPENDENCIES
   redactor-rails!
   redis
   sass-rails
+  select2-rails
   simple_form
   simple_form_extension
   spring
   spring-watcher-listen (~> 2.0.0)
   stripe
   uglifier
+  underscore-rails
   web-console (>= 3.3.0)
   webpacker
 
