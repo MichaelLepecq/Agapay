@@ -3,4 +3,9 @@ class PagesController < ApplicationController
   def home
     # landing page
   end
+
+  def preferences
+    @preferences = current_user.categories
+  end
+
 end

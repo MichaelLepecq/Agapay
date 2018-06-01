@@ -1,0 +1,54 @@
+
+.preference-box {
+  background-color: white;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    margin: 0;
+  }
+  margin-top: 30px;
+  width: 100%;
+  height: 41vw;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.center-boxes {
+  margin-left: 0px;
+}
+
+.flex-wrap-pref{
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.environment.focs{
+    border: solid 3px #5FBB92;
+}
+.international.focs{
+    border: solid 3px #FDA132;
+}
+.health.focs{
+    border: solid 3px #F15156;
+}
+.arts-and-culture.focs{
+    border: solid 3px #87659F;
+}
+.animals.focs{
+    border: solid 3px #F8A3A6;
+}
+.education.focs{
+    border: solid 3px #FFE464;
+}
+.social-services.focs{
+    border: solid 3px #B6C9F0;
+}
+.indigenous-people.focs{
+    border: solid 3px #BAA898;
+}
