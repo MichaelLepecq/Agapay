@@ -10,4 +10,7 @@ class User < ApplicationRecord
   #validates :first_name, presence: true
   #validates :last_name, presence: true
 
+  def has_category_as_preference(category)
+    self.categories.include?(category)
+  end
 end

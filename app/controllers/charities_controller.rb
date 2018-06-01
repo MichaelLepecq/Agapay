@@ -2,8 +2,9 @@ class CharitiesController < ApplicationController
  before_action :authenticate_user!, only: [:favorite]
 
   def index
-     @categories = Category.all
-     @charities = Charity.all
+    @categories_user = current_user.categories
+    @categories = Category.all
+    @charities = Charity.all
    end
 
    def search
