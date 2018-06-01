@@ -9,7 +9,15 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "simple_form_extension";
+@import "jasny-bootstrap";
+@import "bootstrap-colorpicker";
+@import "jquery.datetimepicker";
+@import "bootstrap-slider";
+
+
 // Your CSS partials
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+

@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
+    "bootstrap-slider": "^10.0.2",
     "gmaps": "^0.4.24",
     "jquery": "^3.3.1"
   },

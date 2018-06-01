@@ -19,6 +19,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'stripe'
 gem 'geocoder'
+gem 'simple_form_extension'
+gem 'jquery'
+gem 'coffee-script'
 
 
 group :development do
@@ -34,3 +37,5 @@ group :development, :test do
 end
 
 
+
+gem 'redactor-rails', github: 'glyph-fr/redactor-rails'
