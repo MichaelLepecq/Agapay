@@ -23,7 +23,9 @@
   flex-wrap: wrap;
 }
 
-
+.environment, .international, .health, .arts-culture, .animals, .education, .social-services, .indigenous-peoples{
+    border: solid 3px #5FBB9200;
+}
 .environment.focs{
     border: solid 3px #5FBB92;
 }
@@ -45,6 +47,6 @@
 .social-services.focs{
     border: solid 3px #B6C9F0;
 }
-.indigenous-people.focs{
+.indigenous-peoples.focs{
     border: solid 3px #BAA898;
 }
