@@ -1,7 +1,42 @@
-  <ul class="list-inline">
-    <li><%= image_tag "#{charity.logo}", size: "100x100" %></li>
-    <li><%= link_to charity_path(charity) do %>
-    <p><%= charity.name.downcase.capitalize %></p>
-    <% end %>
-  </li>
-</ul>
+<div class="col-xs-12 col-sm-6 col-md-4 card-wrapper">
+  <%= link_to charity_path(charity) do %>
+    <div class="card" >
+      <div class="card-photo">
+        <%= image_tag "#{charity.logo}" %>
+      </div>
+      <div class="card-category">
+        <% charity.categories.each do |cat|   %>
+          <% if cat.name == "arts-culture"  %>
+            <div class="<%= cat.name %> tags">Arts & Culture</div>
+          <% elsif cat.name == "indigenous-peoples"  %>
+            <div class="<%= cat.name %> tags">Indigenous Peoples</div>
+          <% elsif cat.name == "social-services"  %>
+            <div class="<%= cat.name %> tags">Social Services</div>
+          <% else %>
+            <div class="<%= cat.name %> tags"><%= cat.name.capitalize %></div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="card-content">
+        <h2>
+          <%= charity.name.upcase %>
+        </h2>
+        <p> <%= sanitize(truncate(charity.description, length: 150)) %></p>
+      </div>
+      <div class="card-hover">
+
+      </div>
+    </div>
+  <% end %>
+  <div class="card-favorite">
+    <div id="fav-<%= charity.id %>" class="<%= charity.liked(current_user) ? 'liked' : '' %>">
+      <%= link_to charity_favorite_path(charity), method: :post, remote: :true do  %>
+          <%= inline_svg('empty_heart')%>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-buttons">
+    <%= image_tag "dislike.png", height: '18%', width: '18%'%>
+    <%= image_tag "donate.png", height: '18%', width: '18%'%>
+  </div>
+</div>

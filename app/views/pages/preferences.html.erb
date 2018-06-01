@@ -1,0 +1,29 @@
+<% categories = {
+"Environment" => "environment",
+"International" => "international",
+"Health" => "health",
+"Art & Culture" => "arts-and-culture",
+"Animals" => "animals",
+"Education" => "education",
+"Social Services" => "social-services",
+"Indigenous Peoples" => "indigenous-people"
+} %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= simple_form_for([@preferences], remote: true) do |f| %>
+        <% categories.each_pair do |key, value| %>
+          <div class="col-xs-6">
+            <div class="focus-box preference-box <%= value %>">
+
+              <%= image_tag value, size: "50x50" %>
+              <p><%= key %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

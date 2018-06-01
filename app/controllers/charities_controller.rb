@@ -1,5 +1,6 @@
 class CharitiesController < ApplicationController
-  skip_before_action :authenticate_user!
+  #before_action :authenticate_user!, only: [:favorite]
+
   def index
      @categories = Category.all
      @charities = Charity.all
@@ -33,6 +34,28 @@ class CharitiesController < ApplicationController
       lng: @charity.longitude,
     }]
   end
+
+
+
+  def favorite
+    @charity = Charity.find(charity_params[:charity_id])
+
+    @favorite = UserCharity.where(user: current_user, charity: @charity)
+
+    if @favorite.empty?
+      @favorite = UserCharity.create(user: current_user, charity: @charity)
+    else
+      @favorite.first.destroy
+    end
+  end
+>>>>>>> master
+
+  private
+
+  def charity_params
+    params.permit(:charity_id)
+  end
+
 end
 
 

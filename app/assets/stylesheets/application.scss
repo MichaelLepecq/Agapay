@@ -2,6 +2,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+@import "config/generic_style";
 
 // External libraries
 @import "bootstrap-sprockets";
@@ -9,8 +10,17 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "simple_form_extension";
+@import "jasny-bootstrap";
+@import "bootstrap-colorpicker";
+@import "jquery.datetimepicker";
+@import "bootstrap-slider";
+
+
 // Your CSS partials
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
 @import 'select2';
+
