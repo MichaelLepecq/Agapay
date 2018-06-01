@@ -23,7 +23,6 @@ gem 'simple_form_extension'
 gem 'jquery'
 gem 'coffee-script'
 
-
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

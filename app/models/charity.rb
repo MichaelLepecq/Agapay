@@ -2,6 +2,7 @@ class Charity < ApplicationRecord
   include PgSearch
   has_many :charity_categories
   has_many :categories, through: :charity_categories
+  has_many :user, through: :user_charities
 
   validates :city, presence: :true
   validates :province, presence: :true
@@ -18,4 +19,9 @@ class Charity < ApplicationRecord
   }
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?
+
+  def liked(current_user)
+    favorite = UserCharity.where(user: current_user, charity: self)
+    favorite.empty? ? false : true
+  end
 end
