@@ -1,7 +1,7 @@
 
 .preference-box {
   background-color: white;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,12 +17,14 @@
   border-radius: 3px;
 }
 
-.flex-wrap-pref{
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+.link-text-pref{
+  text-decoration: none;
+  color: black;
 }
 
+.environment, .international, .health, .arts-culture, .animals, .education, .social-services, .indigenous-peoples{
+    border: solid 3px #5FBB9200;
+}
 
 .environment.focs{
     border: solid 3px #5FBB92;
@@ -45,6 +47,6 @@
 .social-services.focs{
     border: solid 3px #B6C9F0;
 }
-.indigenous-people.focs{
+.indigenous-peoples.focs{
     border: solid 3px #BAA898;
 }

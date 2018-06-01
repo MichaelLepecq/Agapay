@@ -4,14 +4,12 @@
     display: flex;
   }
 }
-
 .content-wrapper {
   @media(min-width: 720px) {
     width: 70%;
   }
   overflow-y: scroll;
 }
-
 .img_show {
   border-bottom: 1px solid $light-gray;
   padding: 20px 0;

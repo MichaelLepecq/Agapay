@@ -1,29 +1,24 @@
 class PaymentsController < ApplicationController
-  before_action :set_donation, only: [:create]
+  # before_action :set_donation, only: [:create]
 
   def new
   end
 
   def create
+    charity = Charity.find(params[:charity_id])
+    donation_amount = params[:donation][:donation_amount]
+
     customer = Stripe::Customer.create(
-      source: params[:stripeToken],
-      email:  params[:stripeEmail]
+      source: params[:stripe_token],
+      email:  current_user.email
     )
 
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
-      amount:       @donation.donation_amount_cents,
-      description:  "Payment for teddy #{@donation.charity} for donation #{@donation.id}",
-      currency:     @donation.dontion_amount.currency
+      amount:       donation_amount.to_i * 100,
+      description:  "Donation of #{donation_amount} to #{charity.name}",
+      currency:     "CAD"
     )
-
-    @donation.update(payment: charge.to_json, state: 'paid')
-    redirect_to donation_path(@donation)
-
-    rescue Stripe::CardError => e
-      flash[:alert] = e.message
-      redirect_to new_donation_payment_path(@donation)
-    end
   end
 
 private
