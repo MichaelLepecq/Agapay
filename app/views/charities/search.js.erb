@@ -1,6 +1,6 @@
 console.log('hello')
 function addCharity(charityHTML) {
-  const charities = document.getElementById('charities');
+  var charities = document.getElementById('charities');
   charities.insertAdjacentHTML('beforeend', charityHTML);
 }
 document.getElementById('charities').innerHTML = "";
