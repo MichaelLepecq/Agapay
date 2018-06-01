@@ -25,28 +25,28 @@ const initializeAutocomplete = () => {
     name: 'charities',
     source: charities,
     templates: {
-      header: '<h3 class="league-name">Charities</h3>'
+      header: '<h3 class="search-name">Charities</h3>'
     }
   },
   {
     name: 'cities',
     source: cities,
     templates: {
-      header: '<h3 class="league-name">Cities</h3>'
+      header: '<h3 class="search-name">Cities</h3>'
     }
   },
   {
     name: 'provinces',
     source: provinces,
     templates: {
-      header: '<h3 class="league-name">Province</h3>'
+      header: '<h3 class="search-name">Province</h3>'
     }
   },
   {
     name: 'categories',
     source: categories,
     templates: {
-      header: '<h3 class="league-name">Categories</h3>'
+      header: '<h3 class="search-name">Categories</h3>'
     }
   }
   );

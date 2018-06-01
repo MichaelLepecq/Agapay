@@ -11,10 +11,25 @@
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
+.navbar-wagon-brand p {
+    font-family: "Karla", "Raleway", "Helvetica", "sans-serif";
+    color: #2E3034;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+
+    position: relative;
+    left: 165px;
+    margin: auto;
+
 }
 
+
+a.navbar-wagon-brand:hover
+{
+  text-decoration:none;
+}
 /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
@@ -32,7 +47,7 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0px;
 }
 
 /* Navbar link */
