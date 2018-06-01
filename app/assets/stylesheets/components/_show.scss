@@ -29,15 +29,16 @@
       font-size: 20px;
       font-weight: bold;
     }
-    span:last-child {
-      font-weight: lighter;
-    }
 
     h3 {
       text-transform: lowercase;
     }
     h3::first-line {
       text-transform: capitalize;
+    }
+
+    p:last-of-type span {
+        font-weight: lighter;
     }
 
   }
