@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 2018_05_30_150506) do
   create_table "user_charities", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "charity_id"
-    t.boolean "bookmarked", default: false
     t.boolean "disliked", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -55,13 +55,12 @@
     <p> Agape </p>
     <% end %>
   </div>
-
-  <div class="navbar-form">
-    <%= render 'shared/search_form' %>
-  </div>
+  <% if current_page?(controller: 'charities', action: 'index') %>
+    <div class="navbar-form">
+      <%= render 'shared/search_form'  %>
+    </div>
+  <% end %>
 </div>
-
-
 
 
 

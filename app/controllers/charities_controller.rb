@@ -1,5 +1,5 @@
 class CharitiesController < ApplicationController
-  #before_action :authenticate_user!, only: [:favorite]
+ before_action :authenticate_user!, only: [:favorite]
 
   def index
      @categories = Category.all
@@ -48,7 +48,7 @@ class CharitiesController < ApplicationController
       @favorite.first.destroy
     end
   end
->>>>>>> master
+
 
   private
 
