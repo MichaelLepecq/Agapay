@@ -1,8 +1,20 @@
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
 <div class="container">
   <div class="row">
     <div id="charities">
-      <% @charities.each do |charity| %>
-        <%# render "charities/charity_card", charity: charity %>
+      <% if @categories_user.empty? == false %>
+        <% charities_user = [] %>
+        <% @categories_user.each do |category| %>
+          <% charities_user << category.charities %>
+        <% end %>
+        <% charities_user.flatten.uniq.each do |charity| %>
+          <%= render "charities/charity_card", charity: charity %>
+        <% end %>
+      <% else %>
+        <% @charities.each do |charity| %>
+          <%= render "charities/charity_card", charity: charity %>
+        <% end %>
       <% end %>
     </div>
   </div>
