@@ -32,12 +32,12 @@ class CharitiesController < ApplicationController
 
    def search
     @donation = Donation.new()
+
     if params[:query].present?
       @charities = Charity.global_search("%#{params[:query]}%")
     else
       @charities = Charity.all
     end
-
 
     if params[:categories].present?
       category_ids = params[:categories].keys

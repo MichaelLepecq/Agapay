@@ -5,6 +5,11 @@
 </div>
 <div class="wrapper">
   <div class="content-wrapper">
+
+  <div class="show-back">
+    <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i>Back</a>
+  </div>
+
     <div class="show-category">
       <% @charity.categories.each do |cat|   %>
         <% if cat.name == "arts-culture"  %>
@@ -18,20 +23,25 @@
         <% end %>
       <% end %>
     </div>
+
+
     <div class="show-content">
       <% charityc = @charity.name.split(" ") do |elem| elem.upcase end %>
       <h2><%= charityc.join(" ") %></h2>
       <%= sanitize @charity.description %>
     </div>
- <%= link_to("Donate", "#", { style: 'background-image:donate.png' 'width: 100%;', class: "btn btn-success", "data-toggle" => "modal", "data-target" => "#charity-modal-#{@charity.id}" } ) %>
+    <%= link_to( "#", { style: 'width: 70px;', class: "button-donate-phone", "data-toggle" => "modal", "data-target" => "#charity-modal-#{@charity.id}" } ) do %>
+      <%= image_tag "donate.png" %>
+    <% end %>
+  <div class="flex-donate">
+    <%= link_to("Donate", "#", { class: "btn btn-success button-donate-desktop", "data-toggle" => "modal", "data-target" => "#charity-modal-#{@charity.id}" } ) %>
+  </div>
   </div>
   <div class="mapshow" id="map" data-markers="<%= @markers.to_json %>">
   </div>
 </div>
 
-<div class="show-back">
-  <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
-</div>
+
 
 <div class="modal fade bd-example-modal-lg" id="charity-modal-<%= @charity.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-content">
