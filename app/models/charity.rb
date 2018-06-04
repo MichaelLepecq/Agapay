@@ -3,6 +3,7 @@ class Charity < ApplicationRecord
   has_many :charity_categories
   has_many :categories, through: :charity_categories
   has_many :user, through: :user_charities
+  has_many :user_charities
 
   validates :city, presence: :true
   validates :province, presence: :true
