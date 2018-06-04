@@ -16,7 +16,8 @@ class CharitiesController < ApplicationController
 
     @categories = Category.where('name != ? AND name != ?', 'public-benefit', 'religion')
 
-    end
+  end
+
 
    def search
     @donation = Donation.new()
