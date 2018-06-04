@@ -1,10 +1,10 @@
 <div class="navbar-agapay">
   <div class="navbar-left">
     <% if user_signed_in? %>
-      <div class="navbar-item">
+      <div class="navbar-agapay-item">
         <div class="dropdown">
           <%= image_tag 'bars.svg', class: 'menuburger', data: { toggle: 'dropdown' }, height: '25', width: '25', id: "navbar-menu", "data-toggle" => "dropdown"  %>
-          <ul class="dropdown-menu dropdown-menu-left navbar-dropdown-menu">
+          <ul class="dropdown-menu navbar-agapay-dropdown-menu">
             <li>
               <%= link_to edit_user_registration_path do %>
               <i class="fa fa-user"></i> <%= t(".personal_information", default: "Personal Information") %>
@@ -16,27 +16,31 @@
               <% end %>
             </li>
             <li>
+              <a href="#"><i class="fas fa-heart"></i> My favorites</a>
+            </li>
+            <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
           </ul>
         </div>
       </div>
     <% else %>
-      <!-- Login link (when logged out) -->
+    <!-- Login link (when logged out) -->
+    <div class="navbar-agapay-item">
       <div class="dropdown">
         <%= image_tag 'bars.svg', class: 'menuburger', data: { toggle: 'dropdown' }, height: '25', width: '25' %>
-        <ul class="dropdown-menu dropdown-menu-left navbar-dropdown-menu">
-          <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %></li>
+        <ul class="dropdown-menu navbar-agapay-dropdown-menu">
+          <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-agapay-item navbar-link" %></li>
         </ul>
       </div>
     </div>
     <% end %>
   </div>
+  <!-- Logo -->
   <div>
-    <!-- Logo -->
-      <%= link_to "AGAPAY", root_path, class: "navbar-brand"%>
+    <%= link_to "AGAPAY", root_path, class: "navbar-brand"%>
   </div>
   <!-- Search -->
   <div class="navbar-form">

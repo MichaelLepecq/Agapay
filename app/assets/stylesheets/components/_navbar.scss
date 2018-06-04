@@ -13,7 +13,6 @@
   align-items: center;
   justify-content: space-between;
   }
-
 /* Logo */
 .navbar-brand {
   font-family: "Karla", "Raleway", "Helvetica", "sans-serif";
@@ -31,14 +30,12 @@
   background-clip: text;
   }
 }
-
 /* User Avatar */
 .navbar-agapay .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
 }
-
 /* Basic navbar item */
 .navbar-agapay-item {
   cursor: pointer;
@@ -61,16 +58,27 @@
   left: 5px;
   right: 0px;
   min-width: 210px;
+  i {
+    padding: 0 10px 0 0;
+    color: $purple;
+  }
+  li {
+    transition: color 0.3s ease;
+    font-weight: lighter;
+    color: $gray;
+    font-size: 16px;
+    line-height: 22px;
+  }
   li > a {
     transition: color 0.3s ease;
-    font-weight: lighter !important;
-    color: #999999 !important;
-    font-size: 18px !important;
-    line-height: 22px !important;
+    font-weight: lighter;
+    color: $gray;
+    font-size: 16px;
+    line-height: 22px;
     padding: 10px 20px;
     &:hover {
       background: transparent !important;
-      color: black !important;
+      color: $dark-gray;
     }
   }
 }
@@ -82,15 +90,4 @@
   align-items: center;
   position: relative;
   z-index: 3;
-  }
-// .navbar-dropdown-menu:before {
-//   content: ' ';
-//   height: 10px;
-//   width: 10px;
-//   position: absolute;
-//   top: 0px;
-//   background-color: white;
-//   transform: rotate(45deg);
-//   border-left: 1px solid #E6E6E6;
-//   border-top: 1px solid #E6E6E6;
-// }
+}
