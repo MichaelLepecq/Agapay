@@ -3,15 +3,26 @@ class CharitiesController < ApplicationController
 
   def index
     @donation = Donation.new()
-    if current_user &&  current_user.categories.any?
-      @categories_user = current_user.categories
-      charities_user = []
-      @categories_user.each do |category|
-        charities_user << category.charities
-      end
-      @charities = charities_user.flatten.uniq
+    if current_user && current_user.categories.any?
+      # @categories_user = current_user.categories
+      # charities_user = []
+      # @categories_user.each do |category|
+      #   charities_user << category.charities
+      # end
+      # @charities = charities_user.flatten.uniq
+      categories_user_ids = current_user.categories.pluck(:id)
+      charity_ids = CharityCategory.where(category_id: categories_user_ids).pluck(:charity_id)
+      exclude_charity_ids = UserCharity.where(user: current_user, disliked: true).pluck(:charity_id)
+
+      charity_ids = charity_ids - exclude_charity_ids
+
+      @charities = Charity.where(id: charity_ids)
+
+    elsif current_user
+      charity_ids = UserCharity.where(user: current_user, disliked: true).pluck(:charity_id)
+      @charities = Charity.where.not(id: charity_ids)
     else
-      @charities = Charity.all
+       @charities = Charity.all
     end
 
     @categories = Category.where('name != ? AND name != ?', 'public-benefit', 'religion')
@@ -50,9 +61,20 @@ class CharitiesController < ApplicationController
     }]
   end
 
+  def dislike
+    @charity = Charity.find(charity_params[:charity_id])
+    @disliked = UserCharity.where(user: current_user, charity: @charity)
 
+    if @disliked.empty?
+      @disliked = UserCharity.create(user: current_user, charity: @charity, disliked: true)
+    else
+      @disliked.update(disliked: true)
+    end
+
+  end
 
   def favorite
+    @prev = Rails.application.routes.recognize_path(request.referrer)[:action]
     @charity = Charity.find(charity_params[:charity_id])
 
     @favorite = UserCharity.where(user: current_user, charity: @charity)
@@ -65,8 +87,11 @@ class CharitiesController < ApplicationController
   end
 
   def user_charities_index
-    @favorites = current_user.charities
+    current_user.user_charities.pluck()
+    @favorites = Charity.joins(:user_charities).where(user_charities: {user_id: current_user.id, disliked: false})
+
     @donation = Donation.new
+
   end
 
 
