@@ -1,0 +1,52 @@
+<div id="burger-menu">
+  <div class="btn_close" onclick="toggleMenu(event, this)">
+    <%= image_tag "close.svg", height: '20', width: '20' %>
+  </div>
+  <% if user_signed_in? %>
+    <div class="user-container">
+      <div class="avatar-menu">
+        <% if current_user.photo? %>
+          <%= cl_image_tag current_user.photo.url %>
+        <% else %>
+          <%= image_tag("default_avatar") %>
+        <% end %>
+      </div>
+      <div class="user-name">
+        <h2><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_registration_path %></h2>
+      </div>
+    </div>
+    <div>
+      <ul >
+        <li>
+          <%= link_to edit_user_registration_path do %>
+            <i class="fa fa-user"></i><%= t(".personal_information", default: "Personal Information") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to preferences_path do %>
+            <i class="fa fa-cog"></i><%= t(".preferences", default: "Preferences") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to favorites_path do %>
+            <i class="fas fa-heart"></i>My favorites</a>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i><%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  <% else %>
+  <!-- Login link (when logged out) -->
+    <div>
+      <div class="user-container">
+        <h2>Sign in</h2>
+      </div>
+
+      <%= render 'devise/sessions/new' %>
+    </div>
+  <% end %>
+</div>

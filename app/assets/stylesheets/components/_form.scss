@@ -10,8 +10,82 @@
     margin-bottom: 30px;
     text-align: center;
   }
-  .btn {
-    width: 100%;
-    margin-bottom: 20px;
+  // .btn {
+  //   width: 100%;
+  //   margin-bottom: 20px;
+  // }
+}
+// #user_remember_me{
+//   margin-right: 10px;
+// }
+.btn-signin {
+  padding: 10px 26px;
+  font-size: 16px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: $green;
+  border-color: $green;
+  width: 150px;
+  &:hover {
+    color: #fff;
+    background-color: #45a279;
+    border-color: #3a8966;
+    text-decoration: none;
   }
+}
+.form-group {
+  margin-bottom: 30px;
+}
+input[type=email] {
+  border: none;
+  border-bottom: 1px solid $light-gray;
+  box-shadow: none;
+  padding-left: 2px;
+}
+input[type=text] {
+  border: none;
+  border-bottom: 1px solid $light-gray;
+  box-shadow: none;
+  padding-left: 2px;
+}
+input[type=password] {
+  border: none;
+  border-bottom: 1px solid $light-gray;
+  box-shadow: none;
+  padding-left: 2px;
+}
+.form-control:focus {
+  border-color: none;
+  outline: 0;
+  box-shadow: none;
+  border-color: $gray;
+}
+// .remember {
+//   font-weight: 400;
+//   font-size: 16px;
+//   color: #7f848e;
+// }
+input.check_boxes {
+  margin-left: 10px;
+  // vertical-align: -3px;
+}
+label {
+  font-weight: normal;
+}
+form {
+  .is-invalid {
+  color: $red;
+  border-color: $red;
+  }
+  .invalid-feedback {
+    color: $red;
+    font-size: 0.8em;
+    font-style: italic;
+  }
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $light-gray;
+  font-weight: lighter;
+  font-size: 16px;
+  opacity: 1; /* Firefox */
 }
