@@ -3,14 +3,14 @@ class CharitiesController < ApplicationController
 
   def index
      @donation = Donation.new()
-     if user_signed_in?
-      @categories_user = current_user.categories
-     end
+     @categories_user = current_user.categories if user_signed_in?
+
      @categories = Category.where('name != ? AND name != ?', 'public-benefit', 'religion')
      @charities = Charity.all
    end
 
    def search
+    @donation = Donation.new()
     if params[:query].present?
       @charities = Charity.global_search("%#{params[:query]}%")
     else

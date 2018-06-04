@@ -1,10 +1,12 @@
 class PaymentsController < ApplicationController
   # before_action :set_donation, only: [:create]
+ before_action :authenticate_user!, only: [:create]
 
   def new
   end
 
   def create
+    redirect_to root_path
     charity = Charity.find(params[:charity_id])
     donation_amount = params[:donation][:donation_amount]
 

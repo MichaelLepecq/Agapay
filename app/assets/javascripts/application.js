@@ -12,3 +12,7 @@ function handleEvent(_, target) {
 function toggleSidebar(_, target) {
   document.getElementById("sidebar").classList.toggle("open")
 }
+
+function toggleSearchbar(_, target) {
+  document.getElementById("search-bloc").classList.toggle("open-search")
+}
