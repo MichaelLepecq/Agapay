@@ -3,13 +3,15 @@
 <div class="container">
   <div class="row">
     <div id="charities">
-      <% if @categories_user.empty? == false %>
-        <% charities_user = [] %>
-        <% @categories_user.each do |category| %>
-          <% charities_user << category.charities %>
-        <% end %>
-        <% charities_user.flatten.uniq.each do |charity| %>
-          <%= render "charities/charity_card", charity: charity %>
+      <% if user_signed_in? %>
+        <% if @categories_user.empty? == false %>
+          <% charities_user = [] %>
+          <% @categories_user.each do |category| %>
+            <% charities_user << category.charities %>
+          <% end %>
+          <% charities_user.flatten.uniq.each do |charity| %>
+            <%= render "charities/charity_card", charity: charity %>
+          <% end %>
         <% end %>
       <% else %>
         <% @charities.each do |charity| %>

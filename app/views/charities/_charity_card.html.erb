@@ -53,25 +53,26 @@
         <%= hidden_field_tag "stripe_token", nil, id: "stipe-token-#{charity.id}" %>
 
         <button id="donate-button-<%= charity.id %>">Donate</button>
+        <% if user_signed_in? %>
+          <script>
+            document.getElementById("donate-button-<%= charity.id %>").addEventListener("click", function(event) {
+              StripeCheckout.configure({
+                // source: "slksm;lkbms;lbkms;blks",
+                key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+                token: function(token) {
+                  document.getElementById("stipe-token-<%= charity.id %>").value = token.id;
+                  document.getElementById("donation-form-<%= charity.id %>").submit();
+                }
+              }).open({
+                amount: parseInt(document.getElementById("donation-amount-<%= charity.id %>").value) * 100,
+                name: "Donate",
+                email: "<%= current_user.email %>"
+              });
 
-        <script>
-          document.getElementById("donate-button-<%= charity.id %>").addEventListener("click", function(event) {
-            StripeCheckout.configure({
-              // source: "slksm;lkbms;lbkms;blks",
-              key: "<%= Rails.configuration.stripe[:publishable_key] %>",
-              token: function(token) {
-                document.getElementById("stipe-token-<%= charity.id %>").value = token.id;
-                document.getElementById("donation-form-<%= charity.id %>").submit();
-              }
-            }).open({
-              amount: parseInt(document.getElementById("donation-amount-<%= charity.id %>").value) * 100,
-              name: "Donate",
-              email: "<%= current_user.email %>"
+              event.preventDefault();
             });
-
-            event.preventDefault();
-          });
         </script>
+        <% end %>
       <% end %>
     </div>
   </div>
