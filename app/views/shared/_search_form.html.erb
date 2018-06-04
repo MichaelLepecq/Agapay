@@ -1,30 +1,41 @@
+<div class="search-bar">
+  <div class="search-button" onclick="toggleSearchbar(event, this)">
+    <button class="submit">
+      <%=  image_tag("search_icon.svg", height: '23', width: '23', class: 'search_button fa fa-search search_icon', alt: 'Find') %>
+    </button>
+  </div>
+  <div id="search-bloc">
+    <div class="search-wrapper">
+      <%= form_tag search_path, remote: :true, method: :get, id: "the-basics", class: "search" do |f| %>
+        <div id="charity-names" data-names="<%= @charities.pluck(:name).flatten.uniq.to_json %>"></div>
+        <div id="cities-names" data-names="<%= @charities.pluck(:city).flatten.uniq.to_json %>"></div>
+        <div id="provinces-names" data-names="<%= @charities.pluck(:province).flatten.uniq.to_json %>"></div>
+        <div id="categories-names" data-names="<%= @charities.map(&:categories).flatten.map(&:name).uniq.to_json%>"></div>
 
-<div class="search-wrapper">
-  <%= form_tag search_path, remote: :true, method: :get, id: "the-basics", class: "search" do |f| %>
-  <div id="charity-names" data-names="<%= @charities.pluck(:name).flatten.uniq.to_json %>"></div>
-  <div id="cities-names" data-names="<%= @charities.pluck(:city).flatten.uniq.to_json %>"></div>
-  <div id="provinces-names" data-names="<%= @charities.pluck(:province).flatten.uniq.to_json %>"></div>
-  <div id="categories-names" data-names="<%= @charities.map(&:categories).flatten.map(&:name).uniq.to_json%>"></div>
 
-
-  <div class="search-filter-bar">
-    <div class="button-submit">
-      <button class="submit">
-        <%=  image_submit_tag("search_icon.svg", height: 20, class: 'search_button fa fa-search search_icon', alt: 'Find') %>
-      </button>
-    </div>
-    <%= text_field_tag :query, params[:query], class: "typeahead search_field ",placeholder: "Search" %>
-    <div class="form-group filter">
-      <% @categories.each do |category| %>
-      <input type="checkbox" name="categories[<%= category.id %>]" id="charity_category_names_<%= category.name %>" class="hidden" >
+        <div class="search-filter-bar">
+          <div class="button-submit">
+            <button class="submit">
+              <%=  image_submit_tag("search_icon.svg", height: 20, class: 'search_button fa fa-search search_icon', alt: 'Find') %>
+            </button>
+          </div>
+          <%= text_field_tag :query, params[:query], class: "typeahead search_field ",placeholder: "Search" %>
+          <div class="form-group filter">
+            <% @categories.each do |category| %>
+              <input type="checkbox" name="categories[<%= category.id %>]" id="charity_category_names_<%= category.name %>" class="hidden" >
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
+
+    <div id="filters-button" onclick="toggleSidebar(event, this)">
+      <%=  image_tag "filter.svg", height: 20 %>
+    </div>
+
+    <div id="filters-close" onclick="toggleSearchbar(event, this)">
+      <%= image_tag "close.svg", class: 'icon_close', height: '20', width: '20' %>
+    </div>
   </div>
-  <% end %>
 </div>
-
-<div id="filters-button" onclick="toggleSidebar(event, this)">
-  <%=  image_tag "filter.svg", height: 20 %>
-</div>
-
 
