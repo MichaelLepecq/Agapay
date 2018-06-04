@@ -8,7 +8,10 @@
           <%= render "charities/charity_card", charity: charity %>
         <% end %>
       <% else %>
-        <h1>You don't have charities yet</h1>
+        <div class="text-center" style="margin-top: 40px;">
+          <h3>No bookmarked charities...</h3>
+          <%= link_to 'Find your own!', charities_path, class: "btn btn-success", style: 'margin-top: 40px;' %>
+        </div>
       <% end %>
     </div>
   </div>
