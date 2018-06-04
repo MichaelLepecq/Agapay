@@ -2,11 +2,21 @@ class CharitiesController < ApplicationController
  before_action :authenticate_user!, only: [:favorite]
 
   def index
-     @donation = Donation.new()
-     @categories_user = current_user.categories if user_signed_in?
-     @categories = Category.where('name != ? AND name != ?', 'public-benefit', 'religion')
-     @charities = Charity.all
-   end
+    @donation = Donation.new()
+    if current_user &&  current_user.categories.any?
+      @categories_user = current_user.categories
+      charities_user = []
+      @categories_user.each do |category|
+        charities_user << category.charities
+      end
+      @charities = charities_user.flatten.uniq
+    else
+      @charities = Charity.all
+    end
+
+    @categories = Category.where('name != ? AND name != ?', 'public-benefit', 'religion')
+
+    end
 
    def search
     @donation = Donation.new()
@@ -51,6 +61,10 @@ class CharitiesController < ApplicationController
     else
       @favorite.first.destroy
     end
+  end
+
+  def user_charities_index
+    @favorites = current_user.charities
   end
 
 

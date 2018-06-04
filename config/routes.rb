@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'preferences/update'
   devise_for :users
   root to: 'pages#home'
-  resources :charities, only: [:index, :show] do
+  resources :charities, only: [:index, :show, :user_charity_index] do
     resources :payments, only: [:new, :create]
     post "favorite", to: "charities#favorite", as: :favorite
     resources :donations, only: [:new, :create, :destroy ]
