@@ -1,0 +1,19 @@
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<div class="container">
+  <div class="row">
+    <div id="charities">
+      <% if @favorites.any? %>
+        <% @favorites.each do |charity| %>
+          <%= render "charities/charity_card", charity: charity %>
+        <% end %>
+      <% else %>
+        <div class="text-center" style="margin-top: 40px;">
+          <h3>No bookmarked charities...</h3>
+          <%= link_to 'Find your own!', charities_path, class: "btn btn-success", style: 'margin-top: 40px;' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

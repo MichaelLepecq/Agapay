@@ -3,8 +3,13 @@
   <ul>
     <% @categories.each do |category| %>
       <li id="charity_category_names_<%= category.name %>" class="<%= category.name %>" onclick="handleEvent(event, this)">
-        <%= image_tag "#{category.name}.svg", class: 'icon_cat', height: '25', width: '25' %>
-        <p><%= category.name %></p>
+        <div class="category-info">
+          <div class="icon_cat" style="height: 25px ; width:24px; background-repeat: no-repeat; margin:auto;background-image: url('<%= image_path category.name %>');">
+
+          </div>
+          <%# image_tag "#{category.name}.svg", class: 'icon_cat', height: '25', width: '25' %>
+          <p><%= category.pretty_name %></p>
+        </div>
       </li>
     <% end %>
   </ul>

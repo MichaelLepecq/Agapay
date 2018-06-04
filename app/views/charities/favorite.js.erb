@@ -1,1 +1,5 @@
 document.getElementById("fav-<%= @charity.id %>").classList.toggle("liked");
+
+<% if @prev == "user_charities_index" %>
+  document.getElementById("charity-card-<%= @charity.id %>").remove();
+<% end %>
