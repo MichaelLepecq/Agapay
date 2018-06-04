@@ -23,7 +23,7 @@
       <h2><%= charityc.join(" ") %></h2>
       <%= sanitize @charity.description %>
     </div>
-    <%= link_to("Donate", "#", { style: 'width: 100%;', class: "btn btn-success", "data-toggle" => "modal", "data-target" => "#charity-modal-#{@charity.id}" } ) %>
+ <%= link_to("Donate", "#", { style: 'background-image:donate.png' 'width: 100%;', class: "btn btn-success", "data-toggle" => "modal", "data-target" => "#charity-modal-#{@charity.id}" } ) %>
   </div>
   <div class="mapshow" id="map" data-markers="<%= @markers.to_json %>">
   </div>
