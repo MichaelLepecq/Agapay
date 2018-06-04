@@ -4,6 +4,7 @@ class CharitiesController < ApplicationController
   def index
      @donation = Donation.new()
      @categories_user = current_user.categories if user_signed_in?
+
      @categories = Category.where('name != ? AND name != ?', 'public-benefit', 'religion')
      @charities = Charity.all
    end
