@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_many :categories, through: :user_categories
   has_many :charities, through: :user_charities
 
+  mount_uploader :photo, PhotoUploader
+
+
   #validates :first_name, presence: true
   #validates :last_name, presence: true
 

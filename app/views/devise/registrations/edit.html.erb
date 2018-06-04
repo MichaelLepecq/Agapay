@@ -3,6 +3,21 @@
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
+    <div class="edit-photo-container">
+      <div class="avatar-large">
+        <% if current_user.photo? %>
+        <%= cl_image_tag current_user.photo.url(:bright_face) %>
+        <% else %>
+        <%= image_tag("default_avatar") %>
+        <% end %>
+      </div>
+      <div >
+        <h3>Change avatar</h3>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+      </div>
+    </div>
+
     <div class="form-inputs personal-profile">
       <p>
       <%= f.input :first_name, required: true, label: false, input_html: { value: current_user.first_name.capitalize } %>
