@@ -3,9 +3,14 @@
 <div class="container">
   <div class="row">
     <div id="charities">
-      <% @favorites.each do |charity| %>
-        <%= render "charities/charity_card", charity: charity %>
+      <% if @favorites.any? %>
+        <% @favorites.each do |charity| %>
+          <%= render "charities/charity_card", charity: charity %>
+        <% end %>
+      <% else %>
+        <h1>You don't have charities yet</h1>
       <% end %>
     </div>
   </div>
 </div>
+

@@ -66,6 +66,7 @@ class CharitiesController < ApplicationController
 
   def user_charities_index
     @favorites = current_user.charities
+    @donation = Donation.new
   end
 
 
