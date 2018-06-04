@@ -16,4 +16,3 @@ function toggleSidebar(_, target) {
 function toggleSearchbar(_, target) {
   document.getElementById("search-bloc").classList.toggle("open-search")
 }
-
