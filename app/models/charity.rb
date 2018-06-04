@@ -4,10 +4,10 @@ class Charity < ApplicationRecord
   has_many :categories, through: :charity_categories
   has_many :user, through: :user_charities
   has_many :user_charities
-
+  has_many :pictures
   validates :city, presence: :true
   validates :province, presence: :true
-  validates :business_number, presence: :true, uniqueness: :true
+  validates :business_number, presence: :true
 
 
   pg_search_scope :global_search,
