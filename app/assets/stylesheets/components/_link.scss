@@ -27,6 +27,13 @@ input[type=text] {
   padding-left: 2px;
 }
 
+input[type=password] {
+  border: none;
+  border-bottom: 1px solid $light-gray;
+  box-shadow: none;
+  padding-left: 2px;
+}
+
 
 .form-control:focus {
   border-color: none;
