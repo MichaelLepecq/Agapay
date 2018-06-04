@@ -7,4 +7,30 @@ document.getElementById('charities').innerHTML = "";
 
 <% @charities.each do |charity| %>
   addCharity('<%= j render "charities/charity_card", charity: charity %>');
+  var slider = new Slider('#donation-amount-<%= charity.id %>', {
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});
+
+document.getElementById("donate-button-<%= charity.id %>").addEventListener("click", function(event) {
+    StripeCheckout.configure({
+      // source: "slksm;lkbms;lbkms;blks",
+      key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+      token: function(token) {
+        document.getElementById("stipe-token-<%= charity.id %>").value = token.id;
+        document.getElementById("donation-form-<%= charity.id %>").submit();
+      }
+    }).open({
+      amount: parseInt(document.getElementById("donation-amount-<%= charity.id %>").value) * 100,
+      name: "Donate",
+      email: "<%= current_user.email %>"
+    });
+
+    event.preventDefault();
+  });
+
 <% end %>
+
+
+
