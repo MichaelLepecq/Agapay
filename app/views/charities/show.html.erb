@@ -1,5 +1,9 @@
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
+<% content_for :meta_title, "#{@charity.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @charity.description %>
+<% content_for :meta_image, @charity.logo %>
+
 <div class="img_show">
   <%= image_tag "#{@charity.logo}", width: "250" %>
 </div>
