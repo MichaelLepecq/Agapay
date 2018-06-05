@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+div#charity-modal-1 {
+  padding-right: 0px;
+}
+
 .slidecontainer {
     width: 100%; /* Width of the outside container */
     height: 3px;
@@ -91,4 +95,17 @@
   font-size: 23px;
   font-weight: 500;
   color: black;
+}
+
+.modal-button {
+  color: #fff;
+  background-color: $green;
+  border: none;
+  margin: 0 40px 15px 40px;
+  width: 125px;
+  padding: 14px 22px;
+}
+
+.form-group.slider.optional.donation_donation_amount {
+    margin-bottom: 3px;
 }
