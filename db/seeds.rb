@@ -6,12 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 require 'json'
 require 'open-uri'
+require 'nokogiri'
 
 puts "Destroying old data..."
+
+Picture.destroy_all
 CharityCategory.destroy_all
+UserCharity.destroy_all
 Charity.destroy_all
 Category.destroy_all
 User.destroy_all
+
+
 
 # Seed users
 
@@ -56,29 +62,58 @@ end
 
 puts "-------------"
 
-doc = open('https://www.canadahelps.org/fr/search/charities/?category=environment&offset=20').read
-file = JSON.parse(doc)
-
 puts "Creating seeds from canadahelps.org..."
 i = 0
-19.times do
-  charity = Charity.create!({
-    name: file['results'][i]['popular_name_en'],
-    city: file['results'][i]['city'],
-    province: file['results'][i]['province'],
-    business_number: file['results'][i]['business_number'],
-    description: file['results'][i]['charity_profile']['about_en'],
-    logo: "https://www.canadahelps.org#{file['results'][i]['charity_profile']['logo']}"
-  })
+until i == 140 do
+  doc = open("https://www.canadahelps.org/fr/search/charities/?category=environment&offset=#{i}").read
+  file = JSON.parse(doc)
+  j = 0
+  20.times do
 
-  puts "created charity #{charity.name}"
-  file['results'][i]['categories'].each do |cate|
-    CharityCategory.create!(charity: charity, category: Category.find_by(name: cate))
-    puts "added category #{cate} to #{charity.name}"
+    if file['results'][j]['charity_profile']['new_hero_image_en'] != nil
+
+      picture_urls = []
+      img_path = file['results'][j]['urls']['charity_profile']
+      url = "https://www.canadahelps.org#{img_path}"
+      html_file = open(url).read
+      html_doc = Nokogiri::HTML(html_file)
+
+      html_doc.search('*[href="#main-ch-modal"]').each do |el|
+        pic_url = el['data-modal-content'].gsub(/\"/, "").split(",")[0].gsub(/\{\simage_url:\s/, "").gsub(/\{video_url:\/\//, "")
+        unless pic_url.empty?
+          picture_urls << pic_url
+        end
+      end
+
+      unless picture_urls == []
+        charity = Charity.new({
+          name: file['results'][j]['popular_name_en'],
+          city: file['results'][j]['city'],
+          province: file['results'][j]['province'],
+          business_number: file['results'][j]['business_number'],
+          description: file['results'][j]['charity_profile']['about_en'],
+          logo: "https://www.canadahelps.org#{file['results'][j]['charity_profile']['logo']}"
+        })
+        puts "created charity #{charity.name}"
+        file['results'][j]['categories'].each do |cate|
+          CharityCategory.create!(charity: charity, category: Category.find_by(name: cate))
+          puts "added category #{cate} to #{charity.name}"
+        end
+        picture_urls.each do |picture_url|
+          Picture.create!(image_url: picture_url, charity_id: charity.id)
+        end
+
+      end
+
+
+      puts j
+      j += 1
+    else
+      j += 1
+    end
   end
-
   puts "---------------"
+  i += 20
 
-  i += 1
 end
 puts "Finished"

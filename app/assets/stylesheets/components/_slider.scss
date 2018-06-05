@@ -87,27 +87,7 @@
     border: 0px solid transparent;
 }
 
-input, button, select, textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    background-color: $green;
-    color: #fff;
-    border-color: #4db386;
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: normal;
-    vertical-align: middle;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 16px;
-    line-height: 1.428571429;
-    border-radius: 2px;
-}
+
 .form-login h2 {
   font-size: 23px;
   font-weight: 500;
