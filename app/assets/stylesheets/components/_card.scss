@@ -28,8 +28,14 @@
       &:hover {
       color: white;
       text-decoration: none;
+      // background-image: linear-gradient(to right bottom, #87659f, #5781bf, #009ac5, #00aeb1, #5fbb92);
+      background-image: linear-gradient(to bottom, #87659f, #5781bf, #009ac5, #00aeb1, #5fbb92);
+      // background-image: linear-gradient(to top, #87659f, #5781bf, #009ac5, #00aeb1, #5fbb92);
+      // background-image: linear-gradient(to left bottom, #87659f, #5781bf, #009ac5, #00aeb1, #5fbb92);
+      // background-image: linear-gradient(to right top, #87659f, #5781bf, #009ac5, #00aeb1, #5fbb92);
+      // background-image: linear-gradient(to left top, #87659f, #5781bf, #009ac5, #00aeb1, #5fbb92);
       box-shadow: 0 30px 30px rgba(0,0,0,0.3);
-      background-color: $black;
+      // background-color: $black;
       border-radius: 5px;
       opacity: 0.4;
       cursor: pointer;
@@ -120,12 +126,25 @@
   border-radius: 50px;
 }
 
+
+.only-p-tags {
+  * {
+    display: none;
+  }
+
+  p, span, blockquote, b {
+    display: initial;
+    font-size: 14px;
+    font-weight: lighter;
+  }
+
+  blockquote {
+    padding: 0;
+  }
+}
+
+
 .donatecard-button {
   height: 18%;
   width: 18%;
-
-  img {
-    height: 100%;
-    width: 100%;
-  }
 }

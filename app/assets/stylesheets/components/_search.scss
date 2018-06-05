@@ -1,7 +1,7 @@
+
 #the-basics{
   display: flex;
 }
-
 
 
 .search-bar{
@@ -9,8 +9,8 @@
   &textarea:focus, input:focus, *:focus {
     outline: 0 !important;
   }
-
 }
+
 #search-bloc{
   display: flex;
   z-index: 21;
@@ -26,6 +26,8 @@
     right: 45px;
   }
 }
+
+
 .search-filter-bar {
   border-bottom: 1px #565656 solid;
   width: 236px;
@@ -34,8 +36,8 @@
 }
 
 ::placeholder {
-    color: $medium-gray;
-    font-weight: lighter;
+  color: $medium-gray;
+  font-weight: lighter;
 }
 
 #filters-button {
@@ -92,6 +94,11 @@ button.submit {
   transition: all .3s ease-in-out;
   &:hover{transform: scale(1.2);
   }
+
+      p{
+      font-weight: normal;
+      font-style: normal;
+    }
 }
 
 .tt-suggestion.tt-selectable {

@@ -1,13 +1,13 @@
 class Charity < ApplicationRecord
   include PgSearch
-  has_many :charity_categories
+  has_many :charity_categories, dependent: :destroy
   has_many :categories, through: :charity_categories
   has_many :user, through: :user_charities
-  has_many :user_charities
-
+  has_many :user_charities, dependent: :destroy
+  has_many :pictures, dependent: :destroy
   validates :city, presence: :true
   validates :province, presence: :true
-  validates :business_number, presence: :true, uniqueness: :true
+  validates :business_number, presence: :true
 
 
   pg_search_scope :global_search,

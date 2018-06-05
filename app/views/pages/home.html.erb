@@ -1,3 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "see charities", charities_path %>
+<div class="container-home">
+  <div class="title-home">
+    <h1 class="brand-home">Agapay</h1>
+    <h2>Give. Differently.</h2>
+    <p>Donate in just one click to causes that matter to you.</p>
+    <%= link_to "Disover", charities_path, class:"button-home" %>
+  </div>
+  <div class="image-home">
+    <%=  image_tag "phone_hand.png" %>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" preserveAspectRatio="none">
+    <polygon fill="white" points="0,80 80,0 80,80"/>
+  </svg>
+</div>

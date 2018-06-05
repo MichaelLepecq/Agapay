@@ -9,6 +9,12 @@
     width: 70%;
   }
 }
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+
 .img_show {
   border-bottom: 1px solid $light-gray;
   padding: 20px 0;
