@@ -88,31 +88,12 @@
   height: 65px;
 }
 
-
-.edit-photo-container {
-  display: inline-flex;
-  justify-content: space-around;
-  padding: 10px;
-  padding-bottom: 0px;
-  margin-bottom: 10px;
-  margin-left: 25px;
-}
-
-.avatar-large {
-  margin-right: 20px;
-  padding-right: 15px;
-  margin-top: 20px;
-}
-
-.avatar-container {
+.avatar-wrapper{
   display: flex;
+  justify-content: center;
 }
 
-.profile-page {
+.photo-input {
+  color: $dark-gray;
+  background: $light-gray
 }
-
-
-
-
-
-

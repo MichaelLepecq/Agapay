@@ -1,53 +1,49 @@
 <div class="container">
   <div class="profile-page" style="background-color: white; padding: 20px; margin-top: 20px;">
-  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.5">
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="edit-photo-container">
-      <div class="avatar-large">
-        <% if current_user.photo? %>
+    <div class="avatar-wrapper">
+      <% if current_user.photo? %>
         <%= cl_image_tag current_user.photo.url(:bright_face) %>
-        <% else %>
+      <% else %>
         <%= image_tag("default_avatar") %>
-        <% end %>
-      </div>
-      <div class="avatar-container">
-        <h3>Change Avatar:</h3>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <hr>
-      </div>
-    </div>
-
-    <div class="form-inputs personal-profile">
-      <p>
-      <%= f.input :first_name, required: true, label: false, input_html: { value: current_user.first_name.capitalize } %>
-      <%= f.input :last_name, required: true, label: false, input_html: { value: current_user.last_name.capitalize } %>
-      <%= f.input :email, required: true, label: false, autofocus: true %>
-      </p>
-
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
-
-      <h3>Change Password</h3>
-      <%= f.input :password, autocomplete: "off", placeholder: "leave it blank if you don't want to change it", required: false, label: false  %>
-      <%= f.input :password_confirmation, placeholder: "Password confirmation", label: false, required: false %>
-      <%= f.input :current_password, placeholder: "Current password", label: false, required: true %>
     </div>
+    <div class="edit-user-form">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+        <div class="avatar-container">
+          <h3>Change Avatar:</h3>
+          <label class="btn photo-input">
+            Add Photo
+            <span style="display: none;">
+              <%= f.file_field :photo %>
+            </span>
+          </label>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Update" %>
+        <%= f.input :first_name, required: true, label: false, input_html: { value: current_user.first_name.capitalize } %>
+        <%= f.input :last_name, required: true, label: false, input_html: { value: current_user.last_name.capitalize } %>
+        <%= f.input :email, required: true, label: false, autofocus: true %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+
+        <h3>Change Password</h3>
+        <%= f.input :password, autocomplete: "off", placeholder: "leave it blank if you don't want to change it", required: false, label: false  %>
+        <%= f.input :password_confirmation, placeholder: "Password confirmation", label: false, required: false %>
+        <%= f.input :current_password, placeholder: "Current password", label: false, required: true %>
+        <div class="form-actions">
+          <%= f.button :submit, "Update" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    <div class="cancel-account">
+      <h3>Cancel my account</h3>
+      <p>Unhappy?</p>
+      <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-  <h3>Cancel my account</h3>
-
-  <p>Unhappy?</p>
-  <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-  <%= link_to "Back", :back %>
+       <%= link_to "Back", :back %>
+    </div>
   </div>
 </div>

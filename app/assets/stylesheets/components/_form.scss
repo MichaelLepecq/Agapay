@@ -54,6 +54,11 @@ input[type=password] {
   box-shadow: none;
   padding-left: 2px;
 }
+
+#user-photo-cache {
+  background: none;
+  border: none;
+}
 .form-control:focus {
   border-color: none;
   outline: 0;
