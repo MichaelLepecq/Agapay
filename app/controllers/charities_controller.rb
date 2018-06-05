@@ -100,11 +100,5 @@ class CharitiesController < ApplicationController
   def charity_params
     params.permit(:charity_id)
   end
-
 end
 
-
-# route renvoit les résultats en json
-# javascript qui demandent les résultats et qui affiche
-
-# @charities = Charity.joins(:categories).where(categories: { name: "animal", name: "environement"})

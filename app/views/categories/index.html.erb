@@ -5,7 +5,6 @@
         <%= link_to user_category_path(category), method: :patch, class: 'link-text-pref', remote: :true do %>
           <div class="col-xs-6">
             <div class="focus-box preference-box <%= 'focs' if current_user.has_category_as_preference(category) %> <%= category.name %>">
-
               <%= image_tag category.name, size: "50x50" %>
               <p style="margin-top: 8px;"><%= category.pretty_name %></p>
             </div>

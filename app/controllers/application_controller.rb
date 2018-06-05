@@ -22,4 +22,9 @@ class ApplicationController < ActionController::Base
     # :user is the scope we are authenticating
     store_location_for(:user, request.fullpath)
   end
+
+  # Setup host to generate the absolute url needed to load your images from the external world
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
 end
