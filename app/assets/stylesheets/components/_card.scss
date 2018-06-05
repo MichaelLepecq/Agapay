@@ -126,12 +126,25 @@
   border-radius: 50px;
 }
 
+
+.only-p-tags {
+  * {
+    display: none;
+  }
+
+  p, span, blockquote, b {
+    display: initial;
+    font-size: 14px;
+    font-weight: lighter;
+  }
+
+  blockquote {
+    padding: 0;
+  }
+}
+
+
 .donatecard-button {
   height: 18%;
   width: 18%;
-
-  img {
-    height: 100%;
-    width: 100%;
-  }
 }

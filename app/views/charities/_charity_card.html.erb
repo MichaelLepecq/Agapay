@@ -21,7 +21,7 @@
         <h2>
           <%= charity.name.upcase %>
         </h2>
-        <p> <%= sanitize(truncate(charity.description, length: 150)) %></p>
+        <div class="only-p-tags"> <%= truncate(charity.description,length: 150, escape: false) %></div>
       </div>
       <div class="card-hover">
 
@@ -37,12 +37,12 @@
   </div>
   <div class="card-buttons">
     <%= link_to charity_dislike_path(charity), method: :post, remote: :true do  %>
-          <%= image_tag "dislike.png" %>
-      <% end %>
+      <%= image_tag "dislike.svg" %>
+    <% end %>
 
 
     <%= link_to("#", { class: "donatecard-button", "data-toggle" => "modal", "data-target" => "#charity-modal-#{charity.id}" }) do %>
-     <%= image_tag "donate.png" %>
+     <%= image_tag "donate.svg" %>
     <% end %>
   </div>
 </div>
@@ -61,7 +61,7 @@
         <%= hidden_field_tag "stripe_token", nil, id: "stipe-token-#{charity.id}" %>
 
         <%# if user_signed_in? %>
-        <h1></h1>
+          <h1></h1>
           <p><button id="donate-button-<%= charity.id %>">Donate</button></p>
         <%# #else %>
           <%#= link_to t(".sign_in", default: "Login"), new_user_session_path %>
