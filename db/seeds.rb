@@ -20,7 +20,10 @@ NAMES_OF_MALFORMED_CHARITIES = [
   "Ma Mawi Wi Chi Itata Centre Inc.",
   "Fife House Foundation",
   "KW Counselling Services",
-  "Better Environmentally Sound Transportation (BEST)"
+  "Better Environmentally Sound Transportation (BEST)",
+  # "BIG BROTHERS BIG SISTERS OF KAWARTHA LAKES-HALIBURTON INC.",
+  # "ALZHEIMER SOCIETY OF ELGIN - ST. THOMAS",
+  # "St. Paul's College Foundation Inc."
 ]
 
 require 'json'
