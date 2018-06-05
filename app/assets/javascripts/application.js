@@ -16,3 +16,7 @@ function toggleSidebar(_, target) {
 function toggleSearchbar(_, target) {
   document.getElementById("search-bloc").classList.toggle("open-search")
 }
+
+function toggleMenu(_, target) {
+  document.getElementById("burger-menu").classList.toggle("open-menu")
+}

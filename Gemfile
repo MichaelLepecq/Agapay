@@ -26,6 +26,8 @@ gem 'underscore-rails'
 gem 'simple_form_extension'
 gem 'jquery'
 gem 'coffee-script'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
 
 
 group :development do
