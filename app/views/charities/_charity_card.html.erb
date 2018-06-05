@@ -62,7 +62,7 @@
 
         <%# if user_signed_in? %>
           <h1></h1>
-          <p><button id="donate-button-<%= charity.id %>">Donate</button></p>
+          <p><button class="modal-button" id="donate-button-<%= charity.id %>">Donate</button></p>
         <%# #else %>
           <%#= link_to t(".sign_in", default: "Login"), new_user_session_path %>
         <%# end %>
