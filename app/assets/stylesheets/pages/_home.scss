@@ -91,10 +91,10 @@ and (orientation: portrait) {
 
   .image-home{display:none;}
   .title-home {
-    top: 175px;
+   top: 121px !important;
     align-content: center;
     p {
-      width: 89%;}
+      width: 307px !important;}
     }
     .container-home svg {
       height: 7vh;

@@ -66,7 +66,7 @@
       <%= sanitize @charity.description %>
     </div>
     <%= link_to( "#", { style: 'width: 70px;', class: "button-donate-phone", "data-toggle" => "modal", "data-target" => "#charity-modal-#{@charity.id}" } ) do %>
-      <%= image_tag "donate.png" %>
+      <%= image_tag "donate.svg" %>
     <% end %>
   <div class="flex-donate">
     <%= link_to("Donate", "#", { class: "btn btn-success button-donate-desktop", "data-toggle" => "modal", "data-target" => "#charity-modal-#{@charity.id}" } ) %>
@@ -78,16 +78,26 @@
 
 
 
-<div class="modal fade bd-example-modal-lg" id="charity-modal-<%= @charity.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+<div class="modal fade bd-example-modal-lg text-center" id="charity-modal-<%= @charity.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-content">
       <div class="col-xs-12 col-sm-4 col-sm-offset-4 form-login">
-      <h2>Your Donation:</h2>
+        <div class="card-photo">
+          <%= image_tag "#{@charity.logo}" %>
+        </div>
+      <h2><%= @charity.name %></h2>
+      <h2>Place Amount:</h2>
       <%= simple_form_for @donation, url: charity_payments_url(@charity), html: { id: "donation-form-#{@charity.id}" } do |f| %>
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <%= f.input(:donation_amount, { label: false, as: :slider, min: 0, max: 100, input_html: { id: "donation-amount-#{@charity.id}"}}) %>
         <%= hidden_field_tag "stripe_token", nil, id: "stipe-token-#{@charity.id}" %>
 
-        <button id="donate-button-<%= @charity.id %>">Donate</button>
+        <%# if user_signed_in? %>
+          <h1></h1>
+          <p><button class="modal-button" id="donate-button-<%= @charity.id %>">Donate</button></p>
+        <%# #else %>
+          <%#= link_to t(".sign_in", default: "Login"), new_user_session_path %>
+        <%# end %>
 
       <% end %>
     </div>

@@ -11,9 +11,8 @@
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
         <div class="avatar-container">
-          <h3>Change Avatar:</h3>
           <label class="btn photo-input">
-            Add Photo
+            Add a photo
             <span style="display: none;">
               <%= f.file_field :photo %>
             </span>

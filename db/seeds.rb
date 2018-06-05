@@ -19,7 +19,8 @@ NAMES_OF_MALFORMED_CHARITIES = [
   "Winnipeg Ostomy Association",
   "Ma Mawi Wi Chi Itata Centre Inc.",
   "Fife House Foundation",
-  "KW Counselling Services"
+  "KW Counselling Services",
+  "Better Environmentally Sound Transportation (BEST)"
 ]
 
 require 'json'
