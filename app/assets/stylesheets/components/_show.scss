@@ -14,10 +14,18 @@
       width: 70%;
       margin: auto;
   }
-
+.right-smooth {
+  left: auto;
+  right: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background-repeat: repeat-x;
+}
+.left-smooth {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-repeat: repeat-x;
+}
 .img_show {
   border-bottom: 1px solid $light-gray;
-  padding: 20px 0;
   text-align: center;
   margin-top: 70px;
 }
@@ -79,33 +87,29 @@
   width: 50%;
   right: 0;
 }
-
 .flex-donate {
   display: flex;
   justify-content: center;
   margin-top: 48px;
   margin-bottom: 50px;
 }
-
 .button-donate-desktop {
-    color: #fff;
-    background-color: #5FBB92;
-    border-color: #4db386;
-    margin: 0 40px;
-    width: 150px;
-    padding: 14px 22px;
-  }
+  color: #fff;
+  background-color: #5FBB92;
+  border-color: #4db386;
+  margin: 0 40px;
+  width: 150px;
+  padding: 14px 22px;
+}
 
 .button-donate-phone{display:none;}
 @media only screen
 and (min-width: 320px)
 and (max-width: 480px)
 and (orientation: portrait) {
-
   .button-donate-desktop{
     display: none;
   }
-
   .button-donate-phone{
     display:block;
     width: 73px;
@@ -116,5 +120,4 @@ and (orientation: portrait) {
     right: 18px;
     bottom: 18px;
   }
-
 }
