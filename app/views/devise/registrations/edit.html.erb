@@ -1,6 +1,6 @@
-<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.5">
 <div class="container">
-  <div style="background-color: white; padding: 20px; margin-top: 20px;">
+  <div class="profile-page" style="background-color: white; padding: 20px; margin-top: 20px;">
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.5">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
@@ -12,7 +12,7 @@
         <%= image_tag("default_avatar") %>
         <% end %>
       </div>
-      <div >
+      <div class="avatar-container">
         <h3>Change Avatar:</h3>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
