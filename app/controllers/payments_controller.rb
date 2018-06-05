@@ -6,7 +6,12 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    redirect_to root_path
+    swal({
+  title: "Good job!",
+  text: "You clicked the button!",
+  icon: "success",
+});
+    redirect_to charities_path
     charity = Charity.find(params[:charity_id])
     donation_amount = params[:donation][:donation_amount]
 
