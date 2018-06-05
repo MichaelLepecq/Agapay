@@ -4,6 +4,13 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#
+
+NAMES_OF_MALFORMED_CHARITIES = [
+  "Indo-Canadian Friendship Society of British Columbia (ICFSBC)",
+  "EARTH DAY CANADA"
+]
+
 require 'json'
 require 'open-uri'
 require 'nokogiri'
@@ -85,7 +92,7 @@ until i == 140 do
         end
       end
 
-      unless picture_urls == []
+      unless picture_urls == [] || NAMES_OF_MALFORMED_CHARITIES.include?(file['results'][j]['popular_name_en'])
         charity = Charity.new({
           name: file['results'][j]['popular_name_en'],
           city: file['results'][j]['city'],
