@@ -16,4 +16,8 @@ class User < ApplicationRecord
   def has_category_as_preference(category)
     self.categories.include?(category)
   end
+
+  def photo_file_name
+    self.photo.filename
+  end
 end

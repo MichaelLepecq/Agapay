@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.5">
 <div class="container">
   <div style="background-color: white; padding: 20px; margin-top: 20px;">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -12,9 +13,10 @@
         <% end %>
       </div>
       <div >
-        <h3>Change avatar</h3>
+        <h3>Change Avatar:</h3>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
+        <hr>
       </div>
     </div>
 
