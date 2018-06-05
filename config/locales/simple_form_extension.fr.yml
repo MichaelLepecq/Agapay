@@ -11,7 +11,7 @@ fr:
       time:
         format:
           js: 'H:i'
-          rails: '%H:%M'      
+          rails: '%H:%M'
       date:
         format:
           js: 'd/m/Y'
