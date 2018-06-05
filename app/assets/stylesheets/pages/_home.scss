@@ -1,1 +1,102 @@
 // Specific CSS for your home-page
+.container-home {
+  position: fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to right top, #87659f, #5781bf, #009ac5, #00aeb1, #5fbb92);
+
+  .title-home {
+    position: absolute;
+    z-index: 5;
+    top: 184px;
+    left: 12%;
+    color: white;
+
+    h1.brand-home{
+      font-family: "Karla", "Raleway", "Helvetica", "sans-serif";
+      color: white;
+      text-transform: uppercase;
+      font-size: 61px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-top: 22px;
+      margin-bottom: 22px;
+    }
+    p {
+      width: 388px;
+      font-weight: lighter;
+      font-size: 20px;
+      margin-bottom: 47px;
+    }
+
+    .button-home {
+      color: #6876AB;
+      background-color: #fff;
+      width: 150px;
+      font-size: 20px;
+      border-radius: 2px;
+      padding: 18px 29px;
+      font-weight: 600;
+      &:hover{
+        cursor:pointer;
+        background-color: $light-gray;
+        text-decoration: none;
+      }
+    }
+  }
+}
+svg {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 74vw;
+  height: 21vh;
+}
+
+.image-home {
+  position: absolute;
+  right: -13%;
+  z-index: 5;
+  bottom: 0;
+  width: 50%;
+
+  img {
+    width: 368px;
+  }
+}
+
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px){
+  .title-home {
+    top: 168px;
+  }
+  .container-home svg {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 74vw;
+    height: 13vh;
+  }
+}
+
+@media only screen
+and (min-width: 320px)
+and (max-width: 480px)
+and (orientation: portrait) {
+
+  .image-home{display:none;}
+  .title-home {
+    top: 175px;
+    align-content: center;
+    p {
+      width: 89%;}
+    }
+    .container-home svg {
+      height: 7vh;
+    }
+  }
