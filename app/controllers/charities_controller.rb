@@ -100,7 +100,6 @@ class CharitiesController < ApplicationController
   def charity_params
     params.permit(:charity_id)
   end
-
 end
 
 
