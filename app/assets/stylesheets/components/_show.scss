@@ -1,12 +1,17 @@
 .wrapper {
   background-color: white;
-  @media(min-width: 720px) {
+  @media(min-width: 850px) {
     display: flex;
   }
 }
 .content-wrapper {
-  @media(min-width: 720px) {
+  @media(min-width: 850px) {
     width: 70%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .row {
+    flex-direction: column;
   }
 }
 .carousel-inner > .item > img,
@@ -30,17 +35,16 @@
   margin-top: 0px;
 }
 .show-category {
-  padding: 0px 35px;
+  padding: 0px 20px;
   color: white;
-  font-weight: lighter;
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-top: 20px;
 }
 .show-content {
-  padding: 0 40px;
+  padding: 0 25px;
   margin-bottom: 50px;
   h2 {
     font-size: 24px;
@@ -63,7 +67,8 @@
   }
 }
 .show-back {
-  margin: 20px 15px;
+  // margin: 0px 15px;
+  padding: 25px 0;
 }
 .back-button {
   padding: 15px 30px;
@@ -81,11 +86,25 @@
 .mapshow {
   flex: 0 0 450px;
   height: 100vh;
-  position: sticky !important;
-  top: 70px !important;
+  position: sticky;
+  top: 70px;
   bottom: 0;
   width: 50%;
   right: 0;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 850px) {
+  .mapshow {
+    position: sticky !important;
+  }
+}
+@media screen and (max-width: 850px) {
+  .mapshow {
+    width: 100%;
+    top: 0;
+  }
 }
 .flex-donate {
   display: flex;
