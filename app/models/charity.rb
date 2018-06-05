@@ -8,6 +8,7 @@ class Charity < ApplicationRecord
   validates :city, presence: :true
   validates :province, presence: :true
   validates :business_number, presence: :true
+  validates :name, presence: true, uniqueness: true
 
 
   pg_search_scope :global_search,
