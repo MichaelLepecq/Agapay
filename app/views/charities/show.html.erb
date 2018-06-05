@@ -1,6 +1,10 @@
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<% content_for :meta_title, "#{@charity.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @charity.description %>
+<% content_for :meta_image, @charity.logo %>
+
 <div class="img_show">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
