@@ -8,7 +8,8 @@
 
 NAMES_OF_MALFORMED_CHARITIES = [
   "Indo-Canadian Friendship Society of British Columbia (ICFSBC)",
-  "EARTH DAY CANADA"
+  "EARTH DAY CANADA",
+  "Better Environmentally Sound Transportation (BEST)"
 ]
 
 require 'json'
