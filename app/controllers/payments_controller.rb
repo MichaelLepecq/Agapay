@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    redirect_to charities_path
+
     charity = Charity.find(params[:charity_id])
     donation_amount = params[:donation][:donation_amount]
 
@@ -29,9 +29,10 @@ class PaymentsController < ApplicationController
         state: 'accepted', # FIXME Remove
         charity: charity
       })
+      redirect_to charities_path
       # redirect_to donations_path
     else
-      raise
+      redirect_to charities_path
       # flash a message
     end
   end
