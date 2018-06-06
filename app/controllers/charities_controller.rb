@@ -91,7 +91,6 @@ class CharitiesController < ApplicationController
     @favorites = Charity.joins(:user_charities).where(user_charities: {user_id: current_user.id, disliked: false})
 
     @donation = Donation.new
-
   end
 
 

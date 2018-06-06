@@ -33,6 +33,11 @@
           <% end %>
         </li>
         <li>
+          <%= link_to donations_path do %>
+            <i class="fas fa-history"></i>My donations</a>
+          <% end %>
+        </li>
+        <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fas fa-sign-out-alt"></i><%= t(".sign_out", default: "Log out") %>
           <% end %>
