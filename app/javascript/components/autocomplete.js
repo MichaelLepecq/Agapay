@@ -24,7 +24,7 @@ const initializeAutocomplete = () => {
 if (charities && cities && provinces && categories) {
   $('#the-basics .typeahead').typeahead(
   {
-    hint: true,
+    hint: false,
     highlight: true,
     minLength: 1
   },

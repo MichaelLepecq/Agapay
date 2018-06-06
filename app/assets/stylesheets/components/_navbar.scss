@@ -23,11 +23,15 @@
     text-decoration:none;
   }
   &:hover {
-  background-image: -webkit-gradient( linear, left top, right bottom, color-stop(0, $green), color-stop(1, $light-purple));
-  background-image: gradient( linear, left top, right bottom, color-stop(0, $green), color-stop(1, $light-purple) );
-  color:transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+    background-image: -webkit-gradient( linear, left top, right bottom, color-stop(0, $green), color-stop(1, $light-purple));
+    background-image: gradient( linear, left top, right bottom, color-stop(0, $green), color-stop(1, $light-purple) );
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+   &:focus {
+    text-decoration:none;
+    color: $dark-gray;
   }
 }
 /* Basic navbar item */
