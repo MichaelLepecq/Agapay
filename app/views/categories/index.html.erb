@@ -1,18 +1,20 @@
 <div class="container">
-  <div class="row">
+  <div class="row preferences-bloc">
     <div class="col-xs-12">
       <% @categories.each do |category| %>
         <%= link_to user_category_path(category), method: :patch, class: 'link-text-pref', remote: :true do %>
-          <div class="col-xs-6">
+          <div class="col-xs-6 col-s-3 col-md-3 card-category">
             <div class="focus-box preference-box <%= 'focs' if current_user.has_category_as_preference(category) %> <%= category.name %>">
-              <%= image_tag category.name, size: "50x50" %>
-              <p style="margin-top: 8px;"><%= category.pretty_name %></p>
+              <div class="category-info">
+                <%= image_tag category.name, size: "49x25" %>
+                <p style="margin-top: 8px;"><%= category.pretty_name %></p>
+              </div>
             </div>
           </div>
         <% end %>
       <% end %>
       <div class="text-center">
-        <%= link_to 'Save', charities_path, class: "btn btn-success", style: "margin: 30px auto; width: 100%;"%>
+        <%= link_to 'Save', charities_path, class: "btn btn-success category-button", style: "margin: 30px auto; width: 100%;"%>
       </div>
     </div>
   </div>
