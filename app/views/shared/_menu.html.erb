@@ -6,7 +6,7 @@
     <div class="user-container">
       <div class="avatar-menu">
         <% if current_user.photo? %>
-          <%= cl_image_tag current_user.photo.url %>
+          <%= cl_image_tag current_user.photo.url(:bright_face) %>
         <% else %>
           <%= image_tag("default_avatar") %>
         <% end %>

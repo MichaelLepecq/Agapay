@@ -24,7 +24,7 @@
   }
   li {
     cursor: pointer;
-    }
+  }
   li > a {
     transition: color 0.3s ease;
     font-weight: lighter;
@@ -45,11 +45,11 @@
   justify-content: flex-start;
   background-color: $light-gray;
   padding: 50px 30px;
-    h2 {
+  h2 {
     font-size: 24px;
     font-weight: 600;
-    }
-    a {
+  }
+  a {
     text-decoration: none;
     color: $dark-gray;
     &:hover {
@@ -75,9 +75,13 @@
   left: 0 !important;
 }
 .menu-signin {
-  padding: 50px 30px;
+  padding: 20px 20px;
+  h1 {
+    font-size: 30px;
+    text-align: center;
+  }
   h2 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
   }
 }
@@ -97,3 +101,89 @@
   color: $dark-gray;
   background: $light-gray
 }
+
+.form-group.form-group-valid {
+  input[type=text] {
+    border-bottom: 1px solid #EEEEEE;
+    box-shadow: none;
+    padding-left: 2px;
+    text-transform: capitalize;
+  }
+}
+
+
+.edit-user-form input.btn.btn.btn.btn-signin {
+    width: 150px;
+    margin: auto;
+}
+
+
+@media only screen
+and (min-width: 1024px) {
+.edit-user-form {
+    width: 900px;
+    margin: auto;
+  .form-group {
+    margin-bottom: 30px;
+    width: 216px;
+  }
+  .avatar-container {
+    margin: 22px 0;
+  }
+
+  .inputs-profil {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+}
+
+}
+@media only screen
+and (min-width: 320px)
+and (max-width: 480px)
+and (orientation: portrait) {
+
+  .profile-page {
+
+    width: 100%;
+    /* padding: 20PX 40px !important; */
+}
+
+  #burger-menu {
+    height: 100vh;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: -417px;
+    bottom: 0;
+    z-index: 50;
+    transition: all 0.3s ease;
+    width: 100%;}
+
+    .avatar-container {
+      margin: 28px 0;
+    }
+    .form-group.form-group-valid {
+      width: 94%;
+    }
+
+    .cancel-account {
+      .show-back {
+        padding: 12px 0;
+      }
+
+      a {
+        color: #87659F;
+      }
+      .back-button {
+        padding: 15px 0px;
+        color: #8b8b8b;
+        font-size: 16px;
+        border-radius: 2px;
+        text-decoration: none;
+      }
+    }
+  }

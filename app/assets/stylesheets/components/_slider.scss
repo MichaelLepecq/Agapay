@@ -46,7 +46,7 @@ div#charity-modal-1 {
     appearance: none;
     width: 20px; /* Set a specific slider handle width */
     height: 20px; /* Slider handle height */
-    background: $light-gray; /* Green background */
+    background: $light-gray; /*  background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 50%;
 }
@@ -54,58 +54,77 @@ div#charity-modal-1 {
 .slider::-moz-range-thumb {
     width: 20px; /* Set a specific slider handle width */
     height: 20px; /* Slider handle height */
-    background: $light-gray; /* Green background */
+    background: $light-gray; /*  background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 50%;
 }
 
 .tooltip-inner {
   background-color: $light-gray;
-  color: $black;
+  color: $dark-gray;
   font-weight: bold;
+  padding: 10px 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.slider .tooltip.top {
+  margin-top: -51px;
+  margin-left: -20px !important;
 }
 
 .tooltip.top .tooltip-arrow {
-    bottom: 0;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px 5px 0;
-    border-top-color: $light-gray;
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: $light-gray;
 }
 .slider-handle {
-    margin-left: -10px;
-    margin-top: -5px;
-    background-color: black;
+  margin-left: -10px;
+  margin-top: -5px;
+  background-color: black;
 }
 .slider-handle {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #000;
-    background-image: linear-gradient(to bottom, #000 0%, #000 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0);
-    -webkit-filter: none;
-    filter: none;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    border: 0px solid transparent;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  background-image: linear-gradient(to bottom, #000 0%, #000 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0);
+  -webkit-filter: none;
+  filter: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 0px solid transparent;
 }
 
-.form-login h2 {
-  font-size: 23px;
-  font-weight: 500;
-  color: black;
+.form-login {
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: $dark-gray;
+  }
+  h4 {
+    font-size: 18px;
+  }
 }
-
 .modal-button {
+  padding: 10px 26px;
+  font-size: 16px;
+  border-radius: 2px;
   color: #fff;
   background-color: $green;
-  border: none;
-  margin: 0 40px 15px 40px;
-  width: 125px;
-  padding: 14px 22px;
+  border-color: $green;
+  width: 150px;
+  &:hover {
+    color: #fff;
+    background-color: #45a279;
+    border-color: #3a8966;
+    text-decoration: none;
+  }
 }
-
 .form-group.slider.optional.donation_donation_amount {
-    margin-bottom: 3px;
+  margin: 50px 0;
 }

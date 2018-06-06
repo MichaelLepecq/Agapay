@@ -1,9 +1,10 @@
-console.log('hello')
 function addCharity(charityHTML) {
   var charities = document.getElementById('charities');
   charities.insertAdjacentHTML('beforeend', charityHTML);
 }
+
 document.getElementById('charities').innerHTML = "";
+
 <% @charities.each do |charity| %>
     addCharity('<%= j render "charities/charity_card", charity: charity %>');
     var slider = new Slider('#donation-amount-<%= charity.id %>', {

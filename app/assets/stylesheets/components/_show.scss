@@ -32,7 +32,7 @@
 .img_show {
   border-bottom: 1px solid $light-gray;
   text-align: center;
-  margin-top: 70px;
+  margin-top: 0px;
 }
 .show-category {
   padding: 0px 20px;
@@ -119,6 +119,7 @@
   margin: 0 40px;
   width: 150px;
   padding: 14px 22px;
+  border-radius: 2px;
 }
 
 .button-donate-phone{display:none;}
