@@ -19,7 +19,7 @@
               <%=  image_submit_tag("search_icon.svg", height: 20, class: 'search_button fa fa-search search_icon', alt: 'Find') %>
             </button>
           </div>
-          <%= text_field_tag :query, params[:query], class: "typeahead search_field ",placeholder: "Search" %>
+          <%= text_field_tag :query, params[:query], class: "typeahead search_field",placeholder: "Search" %>
           <div class="form-group filter">
             <% @categories.each do |category| %>
               <input type="checkbox" name="categories[<%= category.id %>]" id="charity_category_names_<%= category.name %>" class="hidden" >

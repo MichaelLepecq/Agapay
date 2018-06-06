@@ -20,7 +20,7 @@
     list-style-type: none;
     padding: 0;
     margin: 30px 30px;
-    line-height: 50px;
+    line-height: 60px;
   }
   li {
     cursor: pointer;
@@ -29,9 +29,9 @@
     transition: color 0.3s ease;
     font-weight: lighter;
     color: $gray;
-    font-size: 16px;
-    line-height: 22px;
-    padding: 10px 20px;
+    font-size: 20px;
+    // line-height: 22px;
+    // padding: 10px 20px;
     &:hover {
       background: transparent !important;
       color: $dark-gray;

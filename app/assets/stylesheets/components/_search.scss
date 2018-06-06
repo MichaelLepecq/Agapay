@@ -105,6 +105,7 @@ button.submit {
   text-transform: lowercase;
   background-color: white;
   font-size: 16px;
+  line-height: 30px;
 }
 
 h3.search-name {
@@ -136,10 +137,10 @@ input[type=text] {
   box-shadow: none;
 }
 
-.typeahead.search_field.tt-hint {
-  background-color: rgba(255, 255, 255, 0) !important;
-}
-
+// NOTE : in case the input hint comes back
+//.typeahead.search_field.tt-hint {
+//  display: none;
+//}
 
 @media only screen
 and (min-width: 320px)

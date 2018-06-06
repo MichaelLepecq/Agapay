@@ -42,6 +42,7 @@
   align-items: center;
   justify-content: flex-start;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 .show-content {
   padding: 0 25px;
@@ -131,7 +132,7 @@ and (orientation: portrait) {
     display: none;
   }
   .button-donate-phone{
-    display:block;
+    display: block;
     width: 73px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 48px;

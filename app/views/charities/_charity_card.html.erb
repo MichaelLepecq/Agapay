@@ -21,7 +21,7 @@
         <h2>
           <%= charity.name.upcase %>
         </h2>
-        <div class="only-p-tags"><%= truncate(charity.description,length: 150, escape: false) %></div>
+        <div class="only-p-tags"><%= sanitize(charity.description.truncate_words(25, separator: /\s/, escape: false)) %></div>
       </div>
       <div class="card-hover">
       </div>
