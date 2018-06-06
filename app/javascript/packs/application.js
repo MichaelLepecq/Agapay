@@ -6,11 +6,11 @@ import swal from 'sweetalert';
 
 initializeAutocomplete();
 
-document.getElementById('').addEventListener('click', (event) => {
-  swal({
-    title: "Good job!",
-    text: "You clicked the button!",
-    icon: "success",
-  });
-});
+// document.getElementById('').addEventListener('click', (event) => {
+//   swal({
+//     title: "Good job!",
+//     text: "You clicked the button!",
+//     icon: "success",
+//   });
+// });
 

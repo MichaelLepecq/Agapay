@@ -75,9 +75,13 @@
   left: 0 !important;
 }
 .menu-signin {
-  padding: 50px 30px;
+  padding: 20px 20px;
+  h1 {
+    font-size: 30px;
+    text-align: center;
+  }
   h2 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
   }
 }
