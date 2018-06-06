@@ -4,7 +4,7 @@
     <% @categories.each do |category| %>
       <li id="charity_category_names_<%= category.name %>" class="<%= category.name %>" onclick="handleEvent(event, this)">
         <div class="category-info">
-          <div class="icon_cat" style="height: 25px ; width:24px; background-repeat: no-repeat; margin:auto;background-image: url('<%= image_path category.name %>');">
+          <div class="icon_cat" style="height: 25px ; width:24px; background-repeat: no-repeat; margin:auto;background-image: url('<%= asset_path category.name %>');">
           </div>
           <p><%= category.pretty_name %></p>
         </div>
