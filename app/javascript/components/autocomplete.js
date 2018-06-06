@@ -3,10 +3,16 @@ import Bloodhound from "bloodhound-js"
 
 const initializeAutocomplete = () => {
   const createBloodHound = (namesId, name) => {
+    const element = document.getElementById(namesId);
+
+    if (!element) {
+      return null;
+    }
+
     return new Bloodhound({
       queryTokenizer: Bloodhound.tokenizers.whitespace, // input is split into words by whitespace
       datumTokenizer: Bloodhound.tokenizers.whitespace, // value at field name in data is cut in words by whitespace
-      local: JSON.parse(document.getElementById(namesId).dataset.names) // data, passed in json by ruby through html
+      local: JSON.parse(element.dataset.names) // data, passed in json by ruby through html
     });
   }
 
@@ -15,6 +21,7 @@ const initializeAutocomplete = () => {
   const provinces = createBloodHound("provinces-names")
   const categories = createBloodHound("categories-names")
 
+if (charities && cities && provinces && categories) {
   $('#the-basics .typeahead').typeahead(
   {
     hint: true,
@@ -51,11 +58,6 @@ const initializeAutocomplete = () => {
   }
   );
 }
-
-
-
-
-
-
+}
 
 export { initializeAutocomplete };
