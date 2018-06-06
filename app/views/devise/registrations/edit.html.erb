@@ -4,7 +4,7 @@
       <% if current_user.photo? %>
       <%= cl_image_tag current_user.photo.url(:bright_face) %>
       <% else %>
-      <%= image_tag("default_avatar") %>
+      <%= image_tag("default_avatar.png") %>
       <% end %>
     </div>
     <div class="edit-user-form">
