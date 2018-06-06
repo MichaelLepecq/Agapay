@@ -21,6 +21,19 @@ class PaymentsController < ApplicationController
       description:  "Donation of #{donation_amount} to #{charity.name}",
       currency:     "CAD"
     )
+
+    if charge.failure_code == nil && charge.status == "succeeded"
+      donation = Donation.create!({
+        donation_amount: donation_amount.to_i,
+        user: current_user,
+        state: 'accepted', # FIXME Remove
+        charity: charity
+      })
+      # redirect_to donations_path
+    else
+      raise
+      # flash a message
+    end
   end
 
 private

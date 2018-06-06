@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
     post "favorite", to: "charities#favorite", as: :favorite
     post "dislike", to: "charities#dislike", as: :dislike
-    resources :donations, only: [:new, :create, :destroy ]
+    resources :donations, only: [:new ]
   end
   resources :bookmarks, only: [:update, :destroy]
-  resources :donations, only: [ :destroy ]
+  resources :donations, only: [ :index ]
   resources :user_categories, only: [:update]
 
   get '/preferences', to: 'categories#index', as: :preferences

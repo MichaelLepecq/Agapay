@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <% current_user.donations.each do |donation| %>
+      <%= link_to charity_path(donation.charity) do %>
+      <div class="card-mydonation">
+        <div class="mydonation-wrapper">
+          <div class="mydonation-header">
+            <%= image_tag donation.charity.logo %>
+          </div>
+          <div class="mydonation-footer">
+              <p>#<%= donation.id %></p>
+              <h2><%= donation.charity.name %></h2>
+              <p><%= donation.created_at.strftime('%B %d, %Y') %></p>
+           </div>
+           <div class="amount">
+              <h3><%= donation.donation_amount %>$</h3>
+          </div>
+        </div>
+        <div class="card-hover">
+        </div>
+      <% end %>
+    <% end %>
+     </div>
+  </div>
+</div>
+

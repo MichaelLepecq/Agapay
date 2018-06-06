@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :user_charities
   has_many :categories, through: :user_categories
   has_many :charities, through: :user_charities
+  has_many :donations
 
   mount_uploader :photo, PhotoUploader
 

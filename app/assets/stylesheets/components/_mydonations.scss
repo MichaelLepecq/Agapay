@@ -1,0 +1,87 @@
+.card-mydonation {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+  }
+}
+.mydonation-wrapper {
+  display: flex;
+  font-weight: bold;
+  background-color: white;
+  align-items:center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 20px;
+  width:100%;
+  height:100%;
+  border: 2px solid transparent;
+  &:hover{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    color: transparent;
+    z-index: 3;
+    text-decoration: none;
+      &:hover {
+      color: white;
+      text-decoration: none;
+      // background-image: linear-gradient(to bottom, #5781bf, #009ac5, #00aeb1, #00aeb1, #5fbb92);
+      // box-shadow: 0 30px 30px rgba(0,0,0,0.3);
+      // background-color: $black;
+      border-radius: 5px;
+      opacity: 0.4;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-image: linear-gradient(to bottom, #5fbb92 0%, #009ac5 100%);
+      border-image-slice: 1;
+      transition: all 0.1s ease;
+    }
+  }
+}
+
+.mydonation-header {
+  padding: 10px;
+  display: flex;
+  h1 {
+    color: $black;
+    margin-bottom: 0px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+}
+
+.mydonation-footer {
+  color: $black;
+  font-size: 16px;
+  font-weight: lighter;
+  flex-grow:1;
+  margin-left:20px;
+  text-align:left;
+
+  h2 {
+    margin-left: 0px;
+    font-size: 18px;
+    color: $black;
+    display: inline-block;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-transform: uppercase;
+  }
+}
+.amount {
+  color: $black;
+  margin-left: 3px;
+  h3 {
+    margin: 0px;
+  }
+}
+
+@media only screen
+  and (min-width: 320px)
+  and (max-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
