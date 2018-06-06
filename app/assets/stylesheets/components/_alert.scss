@@ -4,13 +4,14 @@
 
 .alert {
   margin-bottom: 0px;
-  margin-top: 70px;
+  margin-top: 82px;
   text-align: center;
   color: white;
   position: absolute;
   top: -13px;
-  z-index: 60;
+  z-index: 0;
   width: 100%;
+  left: 0;
 }
 
 .alert-info {
@@ -18,15 +19,4 @@
 }
 .alert-warning {
   background: $red;
-}
-
-@media only screen
-and (min-width: 320px)
-and (max-width: 480px)
-and (orientation: portrait) {
-
-  .alert {
-    margin-top: 70px;
-  }
-
 }
