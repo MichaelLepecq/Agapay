@@ -29,12 +29,12 @@ class PaymentsController < ApplicationController
         state: 'accepted', # FIXME Remove
         charity: charity
       })
-      redirect_to charities_path
       # redirect_to donations_path
     else
-      redirect_to charities_path
       # flash a message
     end
+
+    redirect_to charities_path
   end
 
 private

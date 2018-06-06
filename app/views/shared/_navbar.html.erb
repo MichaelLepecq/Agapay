@@ -1,8 +1,11 @@
 <div class="navbar-agapay">
+  <% if controller_name != 'registrations' && controller_name != 'sessions'%>
   <div onclick="toggleMenu(event, this)">
     <%=  image_tag "bars.svg", height: '25', width: '25' %>
   </div>
-  <%= render 'shared/menu' %>
+
+    <%= render 'shared/menu' %>
+  <% end %>
   <!-- Logo -->
   <div>
     <%= link_to "AGAPAY", charities_path, class: "navbar-brand"%>
