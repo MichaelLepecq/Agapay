@@ -6,11 +6,11 @@
         <div class="mydonation-wrapper">
           <div class="mydonation-header">
             <%= image_tag donation.charity.logo %>
-            <h1>#<%= donation.id %></h1>
           </div>
           <div class="mydonation-footer">
+              <p>#<%= donation.id %></p>
               <h2><%= donation.charity.name %></h2>
-              <p><%= donation.created_at.strftime('%c') %></p>
+              <p><%= donation.created_at.strftime('%B %d, %Y') %></p>
            </div>
            <div class="amount">
               <h3><%= donation.donation_amount %>$</h3>

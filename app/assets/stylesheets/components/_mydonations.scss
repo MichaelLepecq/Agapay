@@ -47,7 +47,7 @@
   display: flex;
   h1 {
     color: $black;
-    margin-top: 0px;
+    margin-bottom: 0px;
     font-size: 14px;
     margin-right: 10px;
   }
@@ -55,7 +55,7 @@
 
 .mydonation-footer {
   color: $black;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: lighter;
   flex-grow:1;
   margin-left:20px;
@@ -63,15 +63,25 @@
 
   h2 {
     margin-left: 0px;
-    font-size: 25px;
+    font-size: 18px;
     color: $black;
-    text-align: center;
     display: inline-block;
-    vertical-align: middle;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-transform: uppercase;
   }
 }
 .amount {
   color: $black;
+  margin-left: 3px;
+  h3 {
+    margin: 0px;
+  }
 }
 
+@media only screen
+  and (min-width: 320px)
+  and (max-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
 
+}
