@@ -5,6 +5,34 @@
   margin-top: 15px;
 }
 
+.category-button{
+  width:50% !important;
+}
+
+.preferences-bloc{
+  display: flex;
+  justify-content: center;
+  margin-top:30px;
+}
+
+.card-category{
+    padding: 5px;}
+
+.focus-box.preference-box {
+    height: 265px;
+    text-align: center;
+    margin-top: 3px;
+    p{
+      font-size:14px;
+      color:black;
+
+      &:hover{
+        color:black;
+      }
+    }
+}
+
+
 .tag-animals {
   background-color: #F8A3A6;
 }
@@ -35,4 +63,18 @@
 
 .tag-social-services {
   background-color: #B6C9F0
+}
+
+@media only screen
+and (min-width: 320px)
+and (max-width: 480px)
+and (orientation: portrait) {
+.focus-box.preference-box {
+    height: 170.5px;}
+
+.category-button{
+  width:100% !important;
+}
+
+
 }
