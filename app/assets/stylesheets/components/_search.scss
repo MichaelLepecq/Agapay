@@ -95,10 +95,10 @@ button.submit {
   &:hover{transform: scale(1.2);
   }
 
-      p{
-      font-weight: normal;
-      font-style: normal;
-    }
+  p{
+    font-weight: normal;
+    font-style: normal;
+  }
 }
 
 .tt-suggestion.tt-selectable {
@@ -136,6 +136,9 @@ input[type=text] {
   box-shadow: none;
 }
 
+.typeahead.search_field.tt-hint {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
 
 
 @media only screen
@@ -159,9 +162,10 @@ and (orientation: portrait) {
     width: 100%;
     display: flex;
   }
+
   #sidebar ul li {
-    width: 150px;
-    height: 150px;
+    width: 43%;
+    height: 24%;
     text-align: center;
     display: flex;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -180,10 +184,9 @@ and (orientation: portrait) {
     padding: 0;
     position: relative;
     left: -8px;
-    margin: 60px 21px;
+    margin: 59px 21px;
 
   }
-
 
   .category-info:hover{transform: scale(1);
   }

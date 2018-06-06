@@ -3,10 +3,17 @@
 * ------------------------------------- */
 
 .alert {
-  margin-top: 70px;
+  margin-bottom: 0px;
+  margin-top: 82px;
   text-align: center;
   color: white;
+  position: absolute;
+  top: -13px;
+  z-index: 0;
+  width: 100%;
+  left: 0;
 }
+
 .alert-info {
   background: $green;
 }

@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def after_sign_out_path_for(resource_or_scope)
+    charities_path
+  end
+
   def storable_location?
     request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
   end
