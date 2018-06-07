@@ -22,6 +22,7 @@ gem 'geocoder'
 
 gem 'select2-rails'
 gem 'underscore-rails'
+gem 'rails_12factor'
 
 gem 'simple_form_extension'
 gem 'jquery'
