@@ -16,13 +16,13 @@ class CharitiesController < ApplicationController
 
       charity_ids = charity_ids - exclude_charity_ids
 
-      @charities = Charity.where(id: charity_ids)
+      @charities = Charity.includes(:user_charities, :categories).where(id: charity_ids)
 
     elsif current_user
       charity_ids = UserCharity.where(user: current_user, disliked: true).pluck(:charity_id)
-      @charities = Charity.where.not(id: charity_ids)
+      @charities = Charity.includes(:user_charities, :categories).where.not(id: charity_ids)
     else
-       @charities = Charity.all
+       @charities = Charity.includes(:user_charities, :categories).all
     end
 
     @categories = Category.where('name != ? AND name != ?', 'public-benefit', 'religion')
