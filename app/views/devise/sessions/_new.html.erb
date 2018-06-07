@@ -5,8 +5,8 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
-      <%= f.input :password, required: true, label: false, placeholder: "Password" %>
+      <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false, input_html: { id: 'email-signin' } %>
+      <%= f.input :password, required: true, label: false, placeholder: "Password", input_html: { id: 'password-signin' } %>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable?%>
     </div>
     <div class="form-actions">

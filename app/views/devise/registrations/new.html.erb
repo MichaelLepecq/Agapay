@@ -7,8 +7,8 @@
         <%= f.error_notification %>
 
         <div class="form-inputs menu-signin">
-          <%= f.input :email, required: true, label: false, autofocus: true, placeholder: 'Email' %>
-          <%= f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: 'Password' %>
+          <%= f.input :email, required: true, label: false, autofocus: true, placeholder: 'Email', input_html: { id: 'email-signup' }  %>
+          <%= f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: 'Password', input_html: { id: 'password-signup' }  %>
           <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirm password' %>
             <div class="form-actions">
               <%= f.button :submit, "Sign up", class: "btn btn-signin" %>

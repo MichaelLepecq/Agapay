@@ -1,24 +1,21 @@
 <div class="modal fade bd-example-modal-lg text-center" id="charity-modal-<%= charity.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-content">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-login">
-
-        <div class="menu-signin">
-          <div class="card-photo">
-            <%= image_tag "#{charity.logo}" %>
-          </div>
-          <h2><%= charity.name %></h2>
-          <h4>How much would you like to give?</h4>
-            <%= simple_form_for @donation, url: charity_payments_path(charity), html: { id: "donation-form-#{charity.id}" } do |f| %>
-            <%= hidden_field_tag :authenticity_token, form_authenticity_token, id: "charity-auth-token-#{charity.id}" %>
-            <%= f.input(:donation_amount, { label: false, as: :slider, min: 0, max: 100, input_html: { id: "donation-amount-#{charity.id}"}}) %>
-            <%= hidden_field_tag "stripe_token", nil, id: "stipe-token-#{charity.id}" %>
-              <div>
-                <button class="modal-button" id="donate-button-<%= charity.id %>">Donate</button>
-              </div>
-            <% end %>
+  <div class="modal-content">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-login">
+      <div class="menu-signin">
+        <div class="card-photo">
+          <%= image_tag "#{charity.logo}" %>
         </div>
-
-
+        <h2><%= charity.name %></h2>
+        <h4>How much would you like to give?</h4>
+        <%= simple_form_for @donation, url: charity_payments_url(charity), html: { id: "donation-form-#{charity.id}" } do |f| %>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= f.input(:donation_amount, { label: false, as: :slider, min: 0, max: 100, input_html: { id: "donation-amount-#{charity.id}"}}) %>
+          <%= hidden_field_tag "stripe_token", nil, id: "stipe-token-#{charity.id}" %>
+          <div>
+            <button class="modal-button" id="donate-button-<%= charity.id %>">Donate</button>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
