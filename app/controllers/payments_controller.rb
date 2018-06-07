@@ -27,11 +27,13 @@ class PaymentsController < ApplicationController
         donation_amount: donation_amount.to_i,
         user: current_user,
         state: 'accepted', # FIXME Remove
-        charity: charity
+        charity: charity,
+
       })
+      flash[:notice] = "Thank you for your payment"
       # redirect_to donations_path
     else
-      # flash a message
+      flash[:alert] = "Payment didn't go through"# flash a messages
     end
 
     redirect_to charities_path

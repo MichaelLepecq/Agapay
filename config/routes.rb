@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
-
   root to: 'pages#home'
   resources :charities, only: [:index, :show] do
     resources :payments, only: [:new, :create]

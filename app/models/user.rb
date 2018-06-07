@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  :recoverable, :rememberable, :trackable, :validatable
 
   has_many :user_categories
   has_many :user_charities
@@ -11,8 +11,11 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
 
+
   #validates :first_name, presence: true
   #validates :last_name, presence: true
+
+
 
   def has_category_as_preference(category)
     self.categories.include?(category)
@@ -21,4 +24,6 @@ class User < ApplicationRecord
   def photo_file_name
     self.photo.filename
   end
+
+
 end
