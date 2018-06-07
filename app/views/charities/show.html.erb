@@ -21,7 +21,7 @@
           <% if picture.image_url =~ /youtube/ %>
             <iframe style="height: 60vh; width: 100vw" src="https://www.youtube.com/embed/<%= @charity.pictures.first.image_url.split("/")[-1] %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           <% else %>
-            <img src="<%= picture.image_url %>" alt="<%= picture.id %>" style="height: 60vh; width: auto">
+            <img src="<%= picture.image_url %>" alt="<%= picture.id %>" style="height: 60vh; width: auto; object-fit: cover;">
           <% end %>
         </div>
       <% end %>

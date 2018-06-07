@@ -22,13 +22,13 @@ gem 'geocoder'
 
 gem 'select2-rails'
 gem 'underscore-rails'
+gem 'rails_12factor'
 
 gem 'simple_form_extension'
 gem 'jquery'
 gem 'coffee-script'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
-
 
 group :development do
   gem 'web-console', '>= 3.3.0'
