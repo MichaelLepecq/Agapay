@@ -7,8 +7,6 @@
       <div class="avatar-menu">
         <% if current_user.photo? %>
           <%= cl_image_tag current_user.photo.url(:bright_face) %>
-        <% elsif current_user.facebook_picture_url? %>
-            <%= image_tag avatar_url, class: "avatar dropdown-toggle" %>
         <% else %>
           <%= image_tag("default_avatar.png") %>
         <% end %>
