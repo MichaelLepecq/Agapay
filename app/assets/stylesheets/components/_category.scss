@@ -14,9 +14,26 @@
   justify-content: center;
   margin-top:30px;
 }
-
-.card-category{
-    padding: 5px;}
+.card-category {
+  padding: 0px 15px;
+  color: white;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.show-category {
+  padding: 0px 20px;
+  color: white;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
 
 .focus-box.preference-box {
     height: 265px;
