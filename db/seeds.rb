@@ -130,7 +130,14 @@ full_json.each do |file|
           end
           puts "added #{file['results'][j]['categories'].count} categories"
           picture_urls.each do |picture_url|
-            Picture.create(image_url: picture_url, charity_id: charity.id)
+            pic = Picture.create(image_url: picture_url, charity_id: charity.id)
+            begin
+              unless picture_url =~ /youtube/
+                Cloudinary::Uploader.upload(picture_url, public_id: "#{charity.id}-#{pic.id}")
+              end
+            rescue CloudinaryException => e
+              p e
+            end
           end
           puts "+#{picture_urls.count} pictures added"
           puts "                        --                           "
