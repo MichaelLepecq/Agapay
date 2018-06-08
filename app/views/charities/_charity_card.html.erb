@@ -4,7 +4,7 @@
       <div class="card-photo">
         <%= image_tag "#{charity.logo}" %>
       </div>
-      <div class="card-category">
+      <div class="card-category-index">
         <% charity.categories.each do |cat|   %>
           <% if cat.name == "arts-culture"  %>
             <div class="tag-<%= cat.name %> tags">Arts & Culture</div>
