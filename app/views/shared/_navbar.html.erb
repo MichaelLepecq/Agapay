@@ -1,5 +1,5 @@
 <div class="navbar-agapay">
-  <% if controller_name != 'registrations' && controller_name != 'sessions'%>
+  <% if controller_name != 'registrations' && controller_name != 'sessions' && action_name != 'edit' %>
   <div onclick="toggleMenu(event, this)">
     <%=  image_tag "bars.svg", height: '25', width: '25' %>
   </div>
