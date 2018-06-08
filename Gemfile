@@ -20,6 +20,9 @@ gem 'webpacker'
 gem 'stripe'
 gem 'geocoder'
 
+gem 'sweet-alert'
+gem 'sweet-alert-confirm'
+
 gem 'select2-rails'
 gem 'underscore-rails'
 gem 'rails_12factor'

@@ -2,6 +2,8 @@
 //= require_tree .
 //= require jquery
 //= require simple_form_extension
+//= require sweet-alert
+//= require sweet-alert-confirm
 
 function handleEvent(_, target) {
   var cat = document.getElementById(target.id)
