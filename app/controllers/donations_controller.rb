@@ -6,6 +6,7 @@ class DonationsController < ApplicationController
   end
 
   def index
+    @donations = current_user.donations
   end
 
   def find_charity(charity)
