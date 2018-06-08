@@ -1,23 +1,26 @@
-<div class="navbar-agapay">
-  <% if controller_name != 'registrations' && controller_name != 'sessions'%>
-  <div onclick="toggleMenu(event, this)">
-    <%=  image_tag "bars.svg", height: '25', width: '25' %>
+<% if action_name == 'edit' || controller_name != 'registrations' && controller_name != 'sessions' %>
+  <div class="navbar-agapay">
+      <div onclick="toggleMenu(event, this)">
+        <%=  image_tag "bars.svg", height: '25', width: '25' %>
+      </div>
+      <%= render 'shared/menu' %>
+      <div>
+        <%= link_to "AGAPAY", charities_path, class: "navbar-brand"%>
+      </div>
+    <!-- Search -->
+    <div class="navbar-form">
+      <% if action_name == 'index' && controller_name == 'charities' %>
+        <%= render 'shared/search_form'  %>
+      <% end %>
+    </div>
   </div>
+<% else %>
+  <div class="navbar-agapay logo-centered">
 
-    <%= render 'shared/menu' %>
-  <% end %>
-  <!-- Logo -->
-  <div>
-    <%= link_to "AGAPAY", charities_path, class: "navbar-brand"%>
+    <div>
+      <%= link_to "AGAPAY", charities_path, class: "navbar-brand"%>
+    </div>
   </div>
-  <!-- Search -->
-  <div class="navbar-form">
-    <% if action_name == 'index' && controller_name == 'charities' %>
-      <%= render 'shared/search_form'  %>
-    <% end %>
-  </div>
-</div>
-
-
+<% end %>
 
 

@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+    <% if @donations.any? %>
     <% current_user.donations.each do |donation| %>
       <%= link_to charity_path(donation.charity) do %>
       <div class="card-mydonation">
@@ -21,6 +22,12 @@
       <% end %>
     <% end %>
      </div>
+     <% else %>
+        <div class="list-empty">
+          <h3> Your donation list is empty. Would you like to donate ?</h3>
+          <%= link_to "Discover", charities_path, class:"btn btn-signin" %>
+        </div>
+     <% end %>
   </div>
 </div>
 
