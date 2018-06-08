@@ -1,7 +1,7 @@
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
 <div class="container">
-  <div class="row">
+  <div class="row cards-all">
     <div id="charities">
       <% @charities.each do |charity| %>
         <%= render "charities/charity_card", charity: charity %>

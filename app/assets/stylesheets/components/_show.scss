@@ -133,3 +133,31 @@ and (orientation: portrait) {
     bottom: 18px;
   }
 }
+
+.card-favorite-show {
+  width: 30px;
+  z-index: 4;
+
+  .fill {
+      fill: none;
+      stroke: $light-gray;
+
+    }
+  a {
+    &:hover {
+      .fill {
+        fill: $red;
+        stroke: $red;
+      }
+    }
+  }
+  svg {
+    width: 25px;
+  }
+  .liked {
+    .fill {
+      fill: $red;
+      stroke: $red;
+    }
+  }
+}

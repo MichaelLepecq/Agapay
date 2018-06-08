@@ -40,11 +40,24 @@
 </div>
 <div class="wrapper">
   <div class="content-wrapper">
-
-  <div class="show-back">
-    <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i>Back</a>
-  </div>
-
+    <% if current_user %>
+      <div class="flex-show">
+        <div class="show-back">
+          <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i>Back</a>
+        </div>
+        <div class="card-favorite-show">
+          <div id="fav-<%= @charity.id %>" class="<%= @charity.liked(current_user) ? 'liked' : '' %>">
+            <%= link_to charity_favorite_path(@charity), method: :post, remote: :true, class: 'heart-show' do  %>
+                <%= inline_svg('empty_heart')%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="show-back">
+        <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i>Back</a>
+      </div>
+    <% end %>
     <div class="show-category">
       <% @charity.categories.each do |cat|   %>
         <% if cat.name == "arts-culture"  %>

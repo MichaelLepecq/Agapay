@@ -35,12 +35,14 @@
     </div>
   </div>
   <div class="card-buttons">
-    <%= link_to charity_dislike_path(charity), method: :post, remote: :true do  %>
-      <%= image_tag "dislike.svg" %>
+    <%= link_to "#", class: "sweet-alert-demo", "data-id" => charity.id do  %>
+      <%= image_tag "no.svg" %>
     <% end %>
     <%= link_to("#", { class: "donatecard-button", "data-toggle" => "modal", "data-target" => "#charity-modal-#{charity.id}" }) do %>
      <%= image_tag "donate.svg" %>
     <% end %>
   </div>
 </div>
+
+
 <%= render 'charities/donation_form', charity: charity %>

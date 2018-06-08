@@ -9,6 +9,10 @@
     }
   }
 }
+
+.cards-all{
+  margin-bottom:55px;
+}
 .card {
   height: 100%;
   background-color: white;
@@ -40,12 +44,14 @@
     }
   }
 }
-.card-favorite {
+
+.card-favorite{
   position: absolute;
   right: 30px;
   top: 15px;
   width: 30px;
   z-index: 4;
+
   .fill {
       fill: none;
       stroke: $light-gray;
@@ -68,6 +74,41 @@
       stroke: $red;
     }
   }
+}
+
+.flex-show{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-favorite-show{
+  margin-right: 21px;
+  width: 30px;
+  z-index: 4;
+
+  .fill {
+      fill: none;
+      stroke: $light-gray;
+
+    }
+  a {
+    &:hover {
+      .fill {
+        fill: $red;
+        stroke: $red;
+      }
+    }
+  }
+  .liked {
+    .fill {
+      fill: $red;
+      stroke: $red;
+    }
+  }
+}
+.card-favorite-show svg {
+  width: 35px !important;
 }
 .card-photo {
   border-bottom: 1px solid $light-gray;

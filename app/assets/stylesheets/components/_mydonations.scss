@@ -8,7 +8,6 @@
 }
 .mydonation-wrapper {
   display: flex;
-  font-weight: bold;
   background-color: white;
   align-items:center;
   margin-bottom: 10px;
@@ -39,6 +38,11 @@
       border-image-slice: 1;
       transition: all 0.1s ease;
     }
+  }
+
+  img{
+    object-fit: contain;
+    width: 87px;
   }
 }
 
