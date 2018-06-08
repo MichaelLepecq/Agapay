@@ -20,8 +20,8 @@
         <%= f.input :photo_cache, as: :hidden %>
       </div>
       <div class="inputs-profil">
-        <%= f.input :first_name, required: true, label: false, placeholder: "First name" ,input_html: { value: current_user.first_name.capitalize } %>
-        <%= f.input :last_name, required: true, placeholder: "Last name", label: false, input_html: { value: current_user.last_name.capitalize } %>
+        <%= f.input :first_name, label: false, placeholder: "Your first name" ,input_html: { value: (current_user.first_name.capitalize if current_user.first_name != nil) } %>
+        <%= f.input :last_name, placeholder: "Your last name", label: false, input_html: { value: (current_user.last_name.capitalize if current_user.last_name != nil)  } %>
         <%= f.input :email, required: true, label: false, placeholder: "Email" , autofocus: true %>
       </div>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
