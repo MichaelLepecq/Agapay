@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<%= content_for(:after_js) do %>
+<% content_for(:after_js) do %>
   <script>
    <% if user_signed_in? %>
     document.getElementById("donate-button-<%= charity.id %>").addEventListener("click", function(event) {
